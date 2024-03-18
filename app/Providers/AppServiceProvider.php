@@ -20,6 +20,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-		//\URL::forceRootUrl('https://se.buu.ac.th/clusterA');
     }
 }
