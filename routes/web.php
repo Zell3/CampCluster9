@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/test', function () {
     echo "<h1>test</h1><a href='".url('/')."'>HOME ".url('/')."</a>";
 });
+
+Route::get('/otp',function(){
+    return view('OTP');
+});
