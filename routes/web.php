@@ -17,11 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/test', function () {
     echo "<h1>test</h1><a href='".url('/')."'>HOME ".url('/')."</a>";
 });
 
 Route::get('/otp',function(){
     return view('OTP');
+});
+
+
+Route::get('/sidebar',function(){
+    return view('dashborad');
+});
+
+Route::get('/filter',function(){
+    return view('filter');
+});
+
+Route::get('/form', function () {
+    return view('form');
 });
