@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,18 @@ Route::get('/otp',function(){
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+Route::get('/edit', function () {
+    return view('edit');
+});
+
+// Route::resource("/welcome",crudController::class)->middleware("auth");
+// Route::get("/register",[userController::class,"register_view"]);
+// Route::post("/register",[userController::class,"register_store"]);
+// Route::get("/login",[userController::class,"login_view"]) -> name("login");
+// Route::post("/login",[userController::class,"login_auth"]);
+// Route::get("/logout",[userController::class,"logout"]);
