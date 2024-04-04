@@ -19,7 +19,15 @@ Route::get('/', function () {
 });
 
 Route::get('/otp',function(){
-    return view('OTP');
+    return view('otp');
+});
+
+Route::get('/sidebar',function(){
+    return view('dashborad');
+});
+
+Route::get('/filter',function(){
+    return view('filter');
 });
 
 Route::get('/form', function () {
