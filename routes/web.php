@@ -24,7 +24,3 @@ Route::get('/otp',function(){
 Route::get('/form', function () {
     return view('form');
 });
-
-Route::get('/test', function () {
-    return view('TEST');
-});
