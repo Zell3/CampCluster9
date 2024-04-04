@@ -25,7 +25,6 @@ Route::get('/otp',function(){
     return view('OTP');
 });
 
-
 Route::get('/sidebar',function(){
     return view('dashborad');
 });
@@ -33,6 +32,7 @@ Route::get('/sidebar',function(){
 Route::get('/filter',function(){
     return view('filter');
 });
+
 
 Route::get('/form', function () {
     return view('form');
