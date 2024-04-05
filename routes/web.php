@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/otp',function(){
+    return view('otp');
+});
 
-Route::get('/test', function () {
-    echo "<h1>test</h1><a href='".url('/')."'>HOME ".url('/')."</a>";
+Route::get('/sidebar',function(){
+    return view('dashborad');
+});
+
+Route::get('/filter',function(){
+    return view('filter');
 });
 
 Route::get('/form', function () {
@@ -30,3 +38,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+Route::get('/edit', function () {
+    return view('edit');
+});
