@@ -34,16 +34,12 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::get('/showFromPrimary', function () {
+Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
-
-Route::get('/form2', function () {
-    return view('form2');
 });
 
 Route::get('/login', function () {
@@ -54,14 +50,6 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
-Route::get('/round', function () {
-    return view('makeRound');
-});
-
-Route::get('/showQR', function () {
-    return view('showQR');
-});
-
-Route::get('/tableData', function () {
-    return view('tableData');
-});
+Route::get("/login",[userController::class,"login_view"]) -> name("login");
+Route::post("/login",[userController::class,"login_auth"]);
+Route::get("/logout",[userController::class,"logout"]);

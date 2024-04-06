@@ -5,43 +5,39 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class Hr extends Authenticatable
 {
     use HasFactory;
 
-    /**
-     * The table associated with the model.
+
+     /**
+     * The attributes that are mass assignable.
      *
      * @var string
      */
-    protected $table = 'hrs';
+    protected $table = "hrs";
+
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
-        'hr_username', 'hr_email', 'password',
+        'hr_username',
+        'hr_email',
+        'hr_password',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be hidden for serialization.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'hr_password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'password' => 'hashed'
-    ];
 }
-

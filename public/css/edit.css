@@ -36,6 +36,10 @@ body {
     cursor: pointer;
   }
 
+  textarea {
+    resize: none;
+  }
+
   .container {
     width: 500px;
     margin: 0 auto;
@@ -46,4 +50,3 @@ body {
   .form-group {
     margin-bottom: 15px;
   }
-
