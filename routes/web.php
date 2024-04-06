@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\authController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
+Route::post('/form', function () {
     return view('form');
 });
 
@@ -53,3 +54,7 @@ Route::get('/login', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get("/login",[authController::class,"login_view"]) -> name("login");
+Route::post("/login",[authController::class,"login_auth"]);
+Route::get("/logout",[authController::class,"logout"]);
