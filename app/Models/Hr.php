@@ -22,7 +22,7 @@ class Hr extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'hr_username', 'hr_email', 'hr_password',
+        'hr_username', 'hr_email', 'password',
     ];
 
     /**
@@ -31,7 +31,7 @@ class Hr extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'hr_password',
+        'password',
         'remember_token',
     ];
 
@@ -41,7 +41,7 @@ class Hr extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'hr_password' => 'hashed',
+        'password' => 'hashed'
     ];
 }
+
