@@ -38,18 +38,10 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::get('/showFromPrimary', function () {
-    return view('formPrimary');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/login', function () {
-    return view('auth/login');
-});
-
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get("/login",[userController::class,"login_view"]) -> name("login");
+Route::post("/login",[userController::class,"login_auth"]);
+Route::get("/logout",[userController::class,"logout"]);
