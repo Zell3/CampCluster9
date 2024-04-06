@@ -13,26 +13,27 @@
         <div class="container-form">
             <label for="inputName" class="header">ชื่อ</label>
             <br>
-            <input type="text" name="name" placeholder="กรอกชื่อ" class="inputText">
+            <input type="text" name= "name" required placeholder="กรอกชื่อ" class="inputText">
 
         </div>
 
         <div class="container-form">
             <label for="inputLastName" class="header">นามสกุล</label>
             <br>
-            <input type="text" name="lastname" placeholder="กรอกนามสกุล" class="inputText">
+            <input type="text" name="lastname" required placeholder="กรอกนามสกุล" class="inputText">
         </div>
         <div class="container-form">
             <label for="inputPhone" class="header">เบอร์โทรศัพท์</label>
             <br>
-            <input type="text" name="phone" placeholder="กรอกเบอร์โทรศัพท์" class="inputText">
+            <input type="text" name="phone" required placeholder="กรอกเบอร์โทรศัพท์" class="inputText">
         </div>
         <div class="container-form">
             <label for="inputEmail" class="header">อีเมล</label>
             <br>
-            <input type="text" name="email" placeholder="กรอกอีเมล" class="inputText">
+            <input type="text" name="email" required placeholder="กรอกอีเมล" class="inputText">
+        </div>    
         <div class="container-form">
-            <label for="inputEmail" class="header">ตำแหน่ง</label>
+            <label for="inputPosition" class="header">ตำแหน่ง</label>
             <br>
             <select name="position" class="inputText">
                 <option value="Developer">Developer</option>
@@ -44,7 +45,7 @@
         <div class="container-form">
             <label for="inputProgramLanguage" class="header">ภาษาโปรแกรมที่ถนัด</label>
             <br>
-            <input type="text" name="ProgramLanguage" placeholder="กรอกภาษาโปรแกรมที่ถนัด" class="inputText">
+            <input type="text" name="ProgramLanguage" required placeholder="กรอกภาษาโปรแกรมที่ถนัด" class="inputText">
         </div>
         <div class="container-form">
             <label for="inputaddInformation" class="header">ข้อมูลเพิ่มเติม</label>
@@ -74,19 +75,19 @@
         <div class="container-form">
             <label for="inputEducationBackground" class="header">ประวัติการศึกษา</label>
             <br>
-            <textarea name="educationBackground" cols="30" rows="5"  placeholder="กรอกประวัติการศึกษา" class="inputTextArea"></textarea>
+            <textarea name="educationBackground" required cols="30" rows="5" placeholder="กรอกประวัติการศึกษา" class="inputTextArea"></textarea>
         </div>
         <div class="container-form">
             <label for="inputLanguage" class="header">ภาษาสื่อสารที่ถนัด</label>
             <br>
-            <textarea name="language" cols="30" rows="5"  placeholder="กรอกภาษาสื่อสารที่ถนัด" class="inputTextArea"></textarea>
+            <textarea name="language" cols="30" rows="5" placeholder="กรอกภาษาสื่อสารที่ถนัด" class="inputTextArea"></textarea>
         </div>
         <div class="container-form">
             <label for="inputExpertSkills" class="header">ทักษะที่เชี่ยวชาญ</label>
             <br>
-            <textarea name="expertSkills" cols="30" rows="5"  placeholder="กรอกทักษะที่เชี่ยวชาญ" class="inputTextArea"></textarea>
+            <textarea name="expertSkills" required cols="30" rows="5" placeholder="กรอกทักษะที่เชี่ยวชาญ" class="inputTextArea"></textarea>
         </div>
-        <button class="btnSubmit" type="submit">ส่ง</button>
+        <button class= "btnSubmit" type= "submit" >ส่ง</button>
     </form>
 </body>
 </html>
