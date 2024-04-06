@@ -34,6 +34,22 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('/showFromPrimary', function () {
+    return view('formPrimary');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+Route::get('/edit', function () {
+    return view('edit');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
