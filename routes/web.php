@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
