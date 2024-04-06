@@ -27,6 +27,9 @@ Route::get('/', function () {
 // Route::get('/editr',function(){
 //     return view('edit_round');
 // });
+Route::get("/",function(){
+    return redirect("/login");
+});
 
 Route::get('/otp',function(){
     return view('otp');
@@ -42,18 +45,6 @@ Route::get('/filter',function(){
 
 Route::get('/form', function () {
     return view('form');
-});
-
-Route::get('/showFormPrimary', function () {
-    return view('formPrimary');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/login', function () {
-    return view('auth/login');
 });
 
 Route::get('/edit', function () {

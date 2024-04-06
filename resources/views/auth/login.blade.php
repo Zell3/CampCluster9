@@ -30,6 +30,7 @@
                                     <label class="font-text" for="password">รหัสผ่าน</label>
                                 </div>
                                 <input type="password" name="password" placeholder="Password" required>
+                                <input type="password" name="password" placeholder="Password" required>
                             </div>
 
                             <div class="field padding-bottom--24">
