@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\userController;
+use App\Models\Hr;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware("auth");
 
 Route::get('/otp',function(){
     return view('otp');
@@ -34,6 +38,14 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('/showFromPrimary', function () {
+    return view('formPrimary');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 Route::get('/login', function () {
     return view('auth/login');
 });
@@ -41,10 +53,3 @@ Route::get('/login', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
-
-// Route::resource("/welcome",crudController::class)->middleware("auth");
-// Route::get("/register",[userController::class,"register_view"]);
-// Route::post("/register",[userController::class,"register_store"]);
-// Route::get("/login",[userController::class,"login_view"]) -> name("login");
-// Route::post("/login",[userController::class,"login_auth"]);
-// Route::get("/logout",[userController::class,"logout"]);
