@@ -38,10 +38,6 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::get('/showFromPrimary', function () {
-    return view('formPrimary');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
