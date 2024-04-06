@@ -37,3 +37,7 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::get('/showFromPrimary', function () {
+    return view('formPrimary');
+});
