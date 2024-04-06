@@ -30,7 +30,7 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
+Route::post('/form', function () {
     return view('form');
 });
 
