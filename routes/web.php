@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditFormsController;
+
+use App\Http\Controllers\authController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -43,7 +45,7 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
+Route::post('/form', function () {
     return view('form');
 });
 
@@ -86,3 +88,4 @@ Route::get('/showQR', function () {
 Route::get('/tableData', function () {
     return view('tableData');
 });
+Route::get("/logout",[authController::class,"logout"]);
