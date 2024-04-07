@@ -23,9 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get('/editr',function(){
-//     return view('edit_round');
-// });
 Route::get("/",function(){
     return redirect("/login");
 });
@@ -54,7 +51,7 @@ Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
-Route::get('/showFromAddition', function () {
+Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
