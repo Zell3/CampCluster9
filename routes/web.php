@@ -38,12 +38,13 @@ Route::get('/filter',function(){
 
 Route::get('/form', function () {
     return view('form');
+});
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
-Route::get('/showFromAddition', function () {
+Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
