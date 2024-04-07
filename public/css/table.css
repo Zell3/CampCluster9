@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root{
+    font-family: sarabun !important;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: #D0D5DD !important;
+    font-family: sarabun !important;
+
+}
+
+.sidebar
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.btn-status-done{
+    background-color: #aad6a9;
+    border: #aad6a9;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+.btn-status-wait{
+    background-color: #ee6f6f;
+    border: #ee6f6f;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+.table-responsive{
+    position: absolute;
+    left: 300px;
+    top: 130px;
+    right: 20px;
+}
+
+.container{
+    width: 100vh;
+    height: 20px;
+}
+
+.iconColor{
+    color: #fff !important;
+}
+.btn-email{
+    width: 20px;
+    height: 20px;
+}
+
+.btn-email-bg, .btn-filter-bg,.btn-search-bg {
+    background-color: #8094C7;
+    border: #8094C7;
+    border-radius: 5px;
+}
+
+.btn-email-bg{
+    margin-top: 10px;
+}
+
+.btn-filter-bg{
+    margin-top: 3px;
+}
+.inputSearch{
+    height: 30px;
+    border: #fff;
+    border-radius: 5px;
+}
+.searchBar{
+    width: fit-content;
+    height: 5px;
+}
+
+.filter{
+    width: fit-content;
+    height: 5px;
+}
+
+.tools-flex-box{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 9px;
+}
+
+.item{
+    display: block;
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+}
+
+.btn-link{
+    background-color: #c3c9d6;
+    border: #c3c9d6;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+table {
+    text-align: center;
+}
+
+
