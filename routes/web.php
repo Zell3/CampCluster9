@@ -46,6 +46,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/form2', function () {
+    return view('form2');
+});
+
 Route::get('/login', function () {
     return view('auth/login');
 });
