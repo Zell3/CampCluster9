@@ -54,6 +54,10 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
+Route::get('/round', function () {
+    return view('makeRound');
+});
+
 Route::get('/showQR', function () {
     return view('showQR');
 });
