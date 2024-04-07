@@ -33,7 +33,7 @@ class authController extends Controller
         }
 
         // Authentication failed
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        return back()->withErrors(['hr_email' => 'Invalid credentials']);
     }
     public function logout()
     {

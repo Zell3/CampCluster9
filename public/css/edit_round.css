@@ -1,0 +1,99 @@
+
+body{
+    background-color: rgba(113, 113, 113, 0.849);
+    margin: 0;
+    padding: 0;
+}
+
+.flexbox{
+    display: flex;
+    box-sizing: border-box; 
+}
+
+.item{
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.content{
+    background-color: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+label{
+    font-size: 16px;
+    margin-right: 20px;
+    
+    
+}
+
+.ti,.lo{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width:100%;
+    max-width: 500px;
+    height: 25px;
+    font-size: 15px;
+    background-color: rgba(101, 100, 100, 0.213);
+    border: 0.5px solid rgba(0, 0, 0, 0.362);
+    border-radius: 10px;
+}
+
+
+.checkbox{
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+.date_s{
+    margin-top: 10px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    justify-content: center;
+    width: 150px;
+    font-size: 15px;
+    
+}
+
+.date_e{
+    margin-left: 20px;
+    justify-content: center;
+    width: 150px;
+    font-size: 15px;
+}
+
+.comment{
+    background-color: rgba(101, 100, 100, 0.213);
+    margin-top: 5px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 15px;
+    
+}
+
+img{
+    margin-left: 30%;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+}
+
+.submit{
+    margin-left: 50%;
+    max-width: 150px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border: 0px solid beige;
+    color: #ffffff;
+    background-color: rgba(0, 94, 255, 0.75);
+    border-radius: 10px;
+}
+
+.submit:hover{
+    background-color:#0fd6a5be ;
+}

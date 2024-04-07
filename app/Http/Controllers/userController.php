@@ -2,63 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class userController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+
+    public function login_view(){
+        return view("auth.login");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function login_auth(Request $request){
+
+        // Retrieve the user by the email address
+        $user = Hr::where('hr_email', $request->email)->first();
+        // Check if the user exists
+        if ($user) {
+            // Compare the input password with the password in the database
+            if ($request->password == $user->hr_password) { // Note: No hashing is done here
+                // Authenticate the user
+                Auth::login($user);
+
+                // Redirect authenticated user to dashboard or any desired route
+                return redirect('/form');
+
+            }
+        }
+
+        // Authentication failed
+        return back()->withErrors(['hr_email' => 'Invalid credentials']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function logout(){
+        Auth::logout();
+        return redirect("/login");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

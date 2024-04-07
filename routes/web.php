@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\authController;
+use App\Http\Controllers\EditFormsController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -26,15 +28,18 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
+Route::get('/sidebar',function(){
+    return view('dashboard');
+});
+
 Route::get('/filter',function(){
     return view('filter');
 });
 
 Route::get('/form', function () {
     return view('form');
-});
 
-Route::get('/showFromPrimary', function () {
+Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
@@ -46,13 +51,17 @@ Route::get('/form2', function () {
     return view('form2');
 });
 
-Route::get('/login', function () {
-    return view('auth/login');
-});
-
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get("/login",[authController::class,"login_view"]) -> name("login");
+Route::post("/login",[authController::class,"login_auth"]);
+Route::get("/logout",[authController::class,"logout"]);
+
+// Edit Forms Routes
+Route::get('/editr/{id}', [EditFormsController::class, 'edit'])->name('editr.edit');
+Route::put("/editr/{id}",[EditFormsController::class, 'update'])->name('editr.update');
 
 Route::get('/round', function () {
     return view('makeRound');
