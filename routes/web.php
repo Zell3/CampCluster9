@@ -3,6 +3,8 @@
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
+use App\Http\Controllers\RecruitmentController;
+use App\Models\RecruitmentModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +35,8 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
+Route::resource('recruitment', RecruitmentController::class);
+ 
 
 Route::get('/showFromPrimary', function () {
     return view('formPrimary');
