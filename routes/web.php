@@ -26,10 +26,6 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
-Route::get('/sidebar',function(){
-    return view('dashborad');
-});
-
 Route::get('/filter',function(){
     return view('filter');
 });
@@ -48,4 +44,8 @@ Route::get('/login', function () {
 
 Route::get('/edit', function () {
     return view('edit');
+});
+
+Route::get('/showQR', function () {
+    return view('showQR');
 });
