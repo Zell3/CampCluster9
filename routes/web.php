@@ -24,10 +24,6 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get('/editr',function(){
-//     return view('edit_round');
-// });
-
 Route::get('/otp',function(){
     return view('otp');
 });
@@ -42,6 +38,17 @@ Route::get('/filter',function(){
 
 Route::get('/form', function () {
     return view('form');
+
+Route::get('/showFormPrimary', function () {
+    return view('formPrimary');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/form2', function () {
+    return view('form2');
 });
 
 Route::get('/edit', function () {
@@ -55,3 +62,15 @@ Route::get("/logout",[authController::class,"logout"]);
 // Edit Forms Routes
 Route::get('/editr/{id}', [EditFormsController::class, 'edit'])->name('editr.edit');
 Route::put("/editr/{id}",[EditFormsController::class, 'update'])->name('editr.update');
+
+Route::get('/round', function () {
+    return view('makeRound');
+});
+
+Route::get('/showQR', function () {
+    return view('showQR');
+});
+
+Route::get('/tableData', function () {
+    return view('tableData');
+});
