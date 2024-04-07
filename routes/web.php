@@ -1,7 +1,4 @@
 <?php
-
-use App\Http\Controllers\authController;
-use App\Http\Controllers\EditFormsController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditFormsController;
 use App\Http\Controllers\userController;
