@@ -57,3 +57,7 @@ Route::get('/login', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get('/tableData', function () {
+    return view('tableData');
+});
