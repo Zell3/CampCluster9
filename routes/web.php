@@ -40,8 +40,6 @@ Route::get('/filter',function(){
 Route::post('/form', function () {
     return view('form');
 });
-Route::resource('recruitment', RecruitmentController::class);
- 
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
