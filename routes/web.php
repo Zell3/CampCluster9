@@ -4,6 +4,8 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\MailController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
+use App\Http\Controllers\RecruitmentController;
+use App\Models\RecruitmentModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -38,6 +40,8 @@ Route::get('/filter',function(){
 Route::post('/form', function () {
     return view('form');
 });
+Route::resource('recruitment', RecruitmentController::class);
+ 
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
