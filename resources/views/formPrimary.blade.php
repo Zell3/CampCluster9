@@ -21,8 +21,8 @@
         </div>
         <hr>
     </header>
-    <div class="page d-flex justify-content-evenly align-items-center vh-100">
-        <div class="data">
+    <div class="page d-flex justify-content-evenly align-items-center">
+        <div class="data ">
             <label for="name" class="label">ชื่อ-นามสกุล</label>
             <br>
 
