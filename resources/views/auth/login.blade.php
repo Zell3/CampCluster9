@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Clicknext: Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <title>Clicknext: Login</title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
 <body>
