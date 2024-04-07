@@ -35,8 +35,6 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
-Route::resource('recruitment', RecruitmentController::class);
- 
 
 Route::get('/showFromPrimary', function () {
     return view('formPrimary');

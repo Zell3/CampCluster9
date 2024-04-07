@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RecruitmentModel extends Model
 {
     use HasFactory;
-    protected $table = "forms";
+    protected $table = "forms"; 
     protected $primaryKey = "form_id";
     public $incrementing = true;
     public $timestamps = false;

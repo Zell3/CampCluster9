@@ -142,8 +142,8 @@ img{
 .table-striped tbody tr.active {
     background-color: #4066EA;
     color: #fff;
-  }
+}
 
-  .table-striped tbody tr.active td {
+.table-striped tbody tr.active td {
     border-color: #2c51b5;
-  }
+}

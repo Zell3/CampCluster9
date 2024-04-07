@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/recruitment.css') }}">
+    
 </head>
 
 <body>
     <div class="container">
         <nav>
             <ul>
-                <!-- nav ด้านซ้าย -->
                 <li><a href="#" class="logo">
                         <img src="https://lh6.googleusercontent.com/proxy/cyexBRM7hR7vutWwKF2RncwXo81OWRVgm-qmb8wGuaNlSRvGG7Z4uQTMQQcpFy0y4d7iA3i-RPj1UT8cxYDyBYER46U4rGqcqR5t-bLdGesNiA" alt="" class="logoclicknext">
                         <span class="nav-item">Clicknext</span>
