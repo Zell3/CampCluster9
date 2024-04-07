@@ -57,6 +57,10 @@ Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
+Route::get('/showFromAddition', function () {
+    return view('showFormAddition');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
