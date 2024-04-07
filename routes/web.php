@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -55,6 +56,18 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
+Route::get('/send', function () {
+    return view('email');
+});
+
+Route::get('/sendmail', [MailController::class,'index']);
+
+Route::get('/sendotp', [MailController::class,'index']);
+
+
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
 Route::post("/login",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
