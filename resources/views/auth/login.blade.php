@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Clicknext: login</title>
+    <title>Clicknext: Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
@@ -19,7 +19,7 @@
                     <div class="formbg-inner padding-horizontal--48">
                         <span class="padding-bottom--15">Login</span>
 
-                        <form id="stripe-login" action = "/login" method = "POST">
+                        <form action = "/login" method = "POST">
                             @csrf
                             <div class="field padding-bottom--24">
                                 <label class="font-text" for="email">อีเมล</label>
