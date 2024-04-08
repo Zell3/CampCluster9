@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+
 class MailController extends Controller
 {
-    public function index()
+    public function generateRandomNumber() {
+        $random_number = '';
+        for ($i = 0; $i < 6; $i++) {
+            $random_number .= rand(0, 9);
+        }
+        return $random_number;
+    }
+
+    public function sendOtp(Request $request)
     {
-        $mailData = [
-            'title' => 'Mail from Kachen',
-            'body' => '*** rai eterk',
-        ];
+        $generated_number = $this->generateRandomNumber(); // Corrected function call
+        $mailData = $generated_number; // Used the generated number
         
-        Mail::to('65160320@go.buu.ac.th')->send(new TestMail($mailData));
+        
+        Mail::to('65160211@go.buu.ac.th')->send(new TestMail($mailData));
 
         echo('Email success.');
     }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\OTPController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,3 +114,21 @@ Route::get("/logout",[authController::class,"logout"]);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
+Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
+
+Route::get('/enter-email', function () {
+    return view('enter_email');
+});
+
+Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
+
+Route::post('/check-otp', [OTPController::class, 'checkOTP'])->name('send');
+
+
+Route::get('/enter-otp', function () {
+    return view('enter_otp');
+});
+
+
+Route::post('/verify-otp', [OTPController::class, 'verifyOTP'])->name('verify-otp');
