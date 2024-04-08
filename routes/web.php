@@ -11,6 +11,18 @@ use App\Models\tableDataModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\OTPController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -81,3 +93,41 @@ Route::get('/showQR', function () {
 
 Route::resource('recruitmentRound', RecruitmentController::class);
 Route::resource('tableData', tableDataController::class);
+
+Route::get('/send', function () {
+    return view('email');
+});
+
+Route::get('/sendmail', [MailController::class,'index']);
+
+Route::get('/sendotp', [MailController::class,'index']);
+
+
+Route::get("/login",[authController::class,"login_view"]) -> name("login");
+Route::post("/login",[authController::class,"login_auth"]);
+Route::get("/logout",[authController::class,"logout"]);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
+Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
+
+Route::get('/enter-email', function () {
+    return view('enter_email');
+});
+
+Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
+
+Route::post('/check-otp', [OTPController::class, 'checkOTP'])->name('send');
+
+
+Route::get('/enter-otp', function () {
+    return view('enter_otp');
+});
+
+
+Route::post('/verify-otp', [OTPController::class, 'verifyOTP'])->name('verify-otp');
+
+Route::get('/send', function () {
+    return view('email');
+});

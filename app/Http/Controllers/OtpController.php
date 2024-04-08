@@ -1,34 +1,41 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\OTPmail;
-use App\Models\Verifytoken; // Assuming Varifytoken model exists
+use App\Mail\TestMail;
 
-class OtpController extends Controller
+class OTPController extends Controller
 {
-    protected function create(array $data)
+
+    public function checkOTP(Request $request)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password'])
-        ]);
 
-        $validToken = rand(10, 100); // Fixed rand() function
+        $otp = $this->generateRandomNumber();
 
-        $get_token = new Verifytoken();
-        $get_token->token = $validToken;
-        $get_token->email = $data['email'];
-        $get_token->save();
+        Mail::to($request->email)->send(new TestMail($otp));
 
-        $get_user_email = $data['email'];
-        $get_user_name = $data['name'];
+        return redirect()->route('enter-otp')->with('email', $request->email);
+    }
 
-        Mail::to($data['email'])->send(new OTPmail($get_user_email, $validToken, $get_user_name));
+    public function verifyOTP(Request $request)
+    {
+        $otp = $request->otp;
+        $email = $request->session()->get('email');
+
+        if ($otp == 'เงื่อนไขตรวจสอบ OTP') {
+            return "OTP ถูกต้อง";
+        } else {
+            return "OTP ไม่ถูกต้อง";
+        }
+    }
+
+    private function generateRandomNumber()
+    {
+        $otp = '';
+        for ($i = 0; $i < 6; $i++) {
+            $otp .= rand(0, 9);
+        }
+        return $otp;
     }
 }
