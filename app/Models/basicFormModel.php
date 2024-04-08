@@ -12,4 +12,7 @@ class basicFormModel extends Model
     protected $primaryKey = 'bdu_id';
     public $incrementing = true ;
     public $timestamps = false ;
+    protected $casts = [
+        'bdu_register_date' => 'date',
+    ];
 }
