@@ -81,11 +81,9 @@ Route::put("/editr/{id}",[formsController::class, 'update'])->name('editr.update
 Route::get('/round', function () {
     return view('makeRound');
 });
-
 Route::get('/showQR', function () {
     return view('showQR');
 });
-
 Route::get('/tableData', function () {
     return view('tableData');
 });
