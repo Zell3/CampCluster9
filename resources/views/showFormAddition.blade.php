@@ -40,7 +40,7 @@
                     <label for="contactRelative" name=""
                         class="setTop head1 ">ข้อมูลบุคคลที่สามารถติดต่อได้เร่งด่วน</label>
                     <br>
-                    <div class="data">
+                    <div class="data setposi">
                         <label for="contactRelative" name="">Lana Steiner</label>
                         <br>
                         <label for="contactRelative" name="">สถานะที่เกี่ยวข้อง : พี่สาว</label>
@@ -54,15 +54,15 @@
                 <div class="content">
                     <label for="nationality" name="" class="head setposition">สัญชาติ</label>
                     <br>
-                    <label for="nationality" name="" class="data setposition2">ไทย</label>
+                    <label for="nationality" name="" class="data1 setposition2">ไทย</label>
                 </div>
             </div>
 
             <div class="item">
-                <div class="content">
-                    <label for="companies" name="" class="head">บริษัทที่เคยทำงาน</label>
+                <div class="content setposition-com">
+                    <label for="companies" name="" class="head ">บริษัทที่เคยทำงาน</label>
                     <br>
-                    <label for="companies" name="" class="data">Clicknext Bangkok</label>
+                    <label for="companies" name="" class="data setposi">Clicknext Bangkok</label>
                 </div>
             </div>
 
@@ -75,10 +75,10 @@
             </div>
 
             <div class="item">
-                <div class="content">
+                <div class="content set-reward">
                     <label for="reward" name="" class="reward head">รางวัลที่ได้รับ</label>
                     <br>
-                    <label for="reward" name=""class="reward data">เรียนจบเกียรตินิยมอันดับ 1
+                    <label for="reward" name=""class="reward data2">เรียนจบเกียรตินิยมอันดับ 1
                         จากมหาวิทยาลัยบูรพา คณะวิทยาการสารสนเทศ</label>
                 </div>
             </div>
@@ -92,11 +92,11 @@
             </div>
 
             <div class="item">
-                <div class="content">
+                <div class="content setposition-cer">
                     <label for="certificate" name="" class="head">ใบรับรอง</label>
                     <br>
                     <a href="#">
-                        <label for="file" class="data">resume.pdf</label>
+                        <label for="file" class="data setposi">resume.pdf</label>
                         {{-- <button class="data">resume.pdf</button> --}}
                     </a>
                 </div>
