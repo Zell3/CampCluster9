@@ -1,13 +1,23 @@
 # Use Alpine Linux as the base image for PHP
 FROM php:8.2-fpm-alpine
 
-# Install additional dependencies
+# Install necessary packages for PHP extensions and build tools
 RUN apk update && \
     apk add --no-cache \
-    libzip-dev \
-    zip \
-    unzip \
-    && docker-php-ext-install pdo_mysql zip
+        libzip-dev \
+        zip \
+        unzip \
+        imagemagick-dev \
+        autoconf \
+        build-base \
+        freetype-dev \
+        libjpeg-turbo-dev \
+        libpng-dev \
+        && docker-php-ext-install pdo_mysql zip gd \
+        && pecl install imagick \
+        && docker-php-ext-enable imagick \
+        && apk del build-base autoconf
+
 
 # Set the working directory
 WORKDIR /var/www/html
