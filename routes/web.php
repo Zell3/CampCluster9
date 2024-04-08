@@ -4,6 +4,7 @@ use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RecruitmentController;
+use App\Http\Controllers\tableDataController;
 use App\Models\RecruitmentModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,5 @@ Route::get('/showQR', function () {
     return view('showQR');
 });
 
-Route::get('/tableData', function () {
-    return view('tableData');
-});
+Route::resource("recruitmentRound",RecruitmentController::class);
+Route::resource("tableData",tableDataController::class);  
