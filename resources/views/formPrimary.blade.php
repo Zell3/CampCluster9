@@ -60,7 +60,7 @@
                 <br>
                 <br>
 
-                <textarea name="additional-info" id="additional-info" cols="30" rows="10">ปด้ะ้ผด้ผะ้</textarea>
+                <textarea  name="additional-info" id="additional-info" cols="30" rows="10" >ปด้ะ้ผด้ผะ้</textarea>
                 <br>
                 <br>
 
