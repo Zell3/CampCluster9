@@ -1,53 +1,71 @@
 <?php
-
 namespace App\Mail;
 
+use App\Models\Email;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $mailData;
-
-    public function __construct($mailData)
-    {
-        $this->mailData = $mailData;
-    }
-
+    public $otp;
+    public $email;
 
     /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Mail',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'emails.demoMail',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
+     * Create a new message instance.
      *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     * @return void
      */
-    public function attachments(): array
+    public function __construct($email,$otp)
     {
-        return [];
+        $this->email = $email;
+        $this->otp = $this->generateRandomNumber();
+
+
+        $this->saveOTPToDatabase();
+    }
+
+    /**
+     * Generate a random 6-digit number.
+     *
+     * @return string
+     */
+    private function generateRandomNumber()
+    {
+        $random_number = '';
+        for ($i = 0; $i < 6; $i++) {
+            $random_number .= rand(0, 9);
+        }
+        return $random_number;
+    }
+
+    /**
+     * Save OTP to the database.
+     *
+     * @return void
+     */
+    public function saveOTPToDatabase()
+{
+
+        $emailModel = new Email();
+        $emailModel->email_name = $this->email;
+        $emailModel->email_otp = $this->otp;
+        $emailModel->save();
+        
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->view('emails.demoMail')
+                    ->subject('Mail')
+                    ->with(['otp' => $this->otp]);
     }
 }

@@ -25,10 +25,10 @@
                     </div>
 
                     <div class="formbg-inner padding-horizontal--48">
-                        <span class="padding-bottom--15">Login</span>
+                        <span class="padding-bottom--15">Login 1</span>
 
                         <!-- Start of login form -->
-                        <form action="/login" method="POST">
+                        <form action="/login-check" method="POST">
                             <!-- CSRF protection -->
                             @csrf
                             <!-- Email input field -->
