@@ -26,8 +26,8 @@ class Hr extends Authenticatable
      */
     protected $fillable = [
         'hr_username',
-        'hr_email',
-        'hr_password',
+        'email',
+        'password',
     ];
 
     /**

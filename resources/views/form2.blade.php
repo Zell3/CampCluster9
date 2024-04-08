@@ -14,7 +14,8 @@
 
     <div class="flexbox">
         <div class="item">
-            <form action="#" method="post">
+            <form action="/form2" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div>
                     <label for="birthday">วัน เดือน ปีเกิด</label><br>
                     <input type="text" name="birthday" placeholder="กรุณากรอก" required><br>
@@ -28,17 +29,17 @@
                     <input type="text" name="religion" placeholder="กรุณากรอก" required><br>
                 </div>
                 <div>
-                    <label for="marital_status">สถานะภาพสมรส</label><br>
-                    <input type="text" name="marital_status" placeholder="กรุณากรอก" required><br>
+                    <label for="maritalstatus">สถานะภาพสมรส</label><br>
+                    <input type="text" name="maritalstatus" placeholder="กรุณากรอก" required><br>
                 </div>
                 <div>
-                    <label for="address_registration">ที่อยู่ตามทะเบียนบ้าน</label><br>
-                    <textarea name="address_registration" id="" cols="30" rows="5" placeholder="กรุณากรอก"
+                    <label for="address">ที่อยู่ตามทะเบียนบ้าน</label><br>
+                    <textarea name="address" id="" cols="30" rows="5" placeholder="กรุณากรอก"
                         required></textarea>
                 </div>
                 <div>
-                    <label for="current_address">ที่อยู่ปัจจุบัน</label><br>
-                    <textarea name="current_address" id="" cols="30" rows="5" placeholder="กรุณากรอก"
+                    <label for="currentaddress">ที่อยู่ปัจจุบัน</label><br>
+                    <textarea name="currentaddress" id="" cols="30" rows="5" placeholder="กรุณากรอก"
                         required></textarea>
                 </div>
 
@@ -46,7 +47,8 @@
         </div>
 
         <div class="item">
-            <form action="#" method="post">
+            <form action="/form2" method="POST">
+                @csrf
                 <div>
                     <label for="emergency_contact_name">ชื่อของบุคคลที่ติดต่อได้กรณีเร่งด่วน</label><br>
                     <input type="text" name="emergency_contact_name" placeholder="กรุณากรอก" required><br>

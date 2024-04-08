@@ -215,8 +215,7 @@ hr{
 .arrow{
     margin-left: 70%;
     display: flex;
-   
-
+    margin-top: 100px;
 }
 
 .content{
