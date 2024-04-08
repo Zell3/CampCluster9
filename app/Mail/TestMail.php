@@ -19,12 +19,12 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($email)
+    public function __construct($email,$otp)
     {
         $this->email = $email;
         $this->otp = $this->generateRandomNumber();
 
-        // เมื่อสร้าง OTP สำเร็จ ให้บันทึกข้อมูลลงในฐานข้อมูล
+
         $this->saveOTPToDatabase();
     }
 

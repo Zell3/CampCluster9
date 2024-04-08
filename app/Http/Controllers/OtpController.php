@@ -13,7 +13,7 @@ class OTPController extends Controller
 
         $otp = $this->generateRandomNumber();
 
-        Mail::to($request->email)->send(new TestMail($otp));
+        Mail::to($request->email)->send(new TestMail($request->email,$otp));
 
         return redirect()->route('enter-otp')->with('email', $request->email);
     }
