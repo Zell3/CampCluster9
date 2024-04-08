@@ -9,8 +9,8 @@
                             {{ session('activated') }}
                         </div>
                     @endif
-        
-        <form action = "{{route}(verifyotp)}}" method = "POST">
+
+        <form action = "{{route(verifyotp)}}" method = "POST">
             @csrf
             <div class = "form-group">
                 <label for ="">Enter OTP</label>
@@ -21,7 +21,7 @@
     </div>
 
     </div>
-    
+
 
 </div>
 @endsection
