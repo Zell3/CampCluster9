@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
 
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/otp.css" />
         <link rel="stylesheet" href="send-button.css" />
         <link rel="stylesheet" href="verify-button.css" />
+</script>
     </head>
     <body>
         <div class="content">
@@ -21,6 +22,7 @@
         <div class="footer">
             <button type="submit">ส่ง</button>
         </div>
+        <script src="emailotp.js"></script>
         <div id="otpPopup" class="popup">
             <div class="popup-content">
                 <h3>ยืนยันรหัสอีเมล</h3>

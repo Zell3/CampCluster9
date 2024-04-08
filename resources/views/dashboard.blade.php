@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <a href="https://www.flaticon.com/free-icons/private-account" title="private account icons"></a>
     <link rel="stylesheet" href="{{ asset('/css/dashboard.css') }}">
+
+
 </head>
+
 <body>
     <header class="header-container">
         <div class="profile">
@@ -21,6 +25,10 @@
         </div>
         <hr>
     </header>
+
+
+
+
     <div class="container-fluid ">
         <div class="row">
             <div class="col-3">
@@ -71,9 +79,11 @@
                     @yield('content')
                 </div>
             </div>
-            </main>
         </div>
     </div>
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -133,5 +143,10 @@
 
         });
     </script>
+
+
+
+
 </body>
+
 </html>

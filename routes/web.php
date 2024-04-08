@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditFormsController;
+
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -23,9 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get('/editr',function(){
-//     return view('edit_round');
-// });
 Route::get("/",function(){
     return redirect("/login");
 });
@@ -34,19 +33,11 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
 Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
+Route::post('/form', function () {
     return view('form');
 });
 
@@ -54,7 +45,7 @@ Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
 
-Route::get('/showFromAddition', function () {
+Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
@@ -69,6 +60,15 @@ Route::get('/form2', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get('/send', function () {
+    return view('email');
+});
+
+Route::get('/sendmail', [MailController::class,'index']);
+
+Route::get('/sendotp', [MailController::class,'index']);
+
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
 Route::post("/login",[authController::class,"login_auth"]);
