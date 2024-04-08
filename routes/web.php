@@ -49,7 +49,7 @@ Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/sidebar', function () {
     return view('dashboard');
 });
 
