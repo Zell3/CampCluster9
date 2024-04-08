@@ -19,7 +19,7 @@ class testpopupmail extends Controller
         $otp = $this->generateRandomNumber();
 
         // ส่งอีเมลพร้อมระบุ OTP
-        Mail::to($request->email)->send(new TestMail($otp));
+        Mail::to($request->email)->send(new TestMail($request->email,$otp));
 
         // แสดงปอปอัปให้กรอก OTP
         return view('otpForm')->with('email_name', $request->email);

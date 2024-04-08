@@ -22,7 +22,7 @@ class MailController extends Controller
         $mailData = $generated_number; // Used the generated number
         
         
-        Mail::to('65160211@go.buu.ac.th')->send(new TestMail($mailData));
+        Mail::to($request->email)->send(new TestMail($request->email,$mailData));
 
         echo('Email success.');
     }
