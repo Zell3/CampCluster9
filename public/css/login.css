@@ -6,6 +6,7 @@
     word-wrap: break-word;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
   }
+
   body {
       min-height: 100%;
       background-color: #ffffff;
@@ -17,6 +18,14 @@
     color: #c71c1c;
     text-decoration: unset;
   }
+
+  .logoclicknext{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
   .logo {
     width: 44px;
     height: 44px;
@@ -25,7 +34,9 @@
     fill: var(--primary);
 }
   .login-root {
-      background: #fff;
+      /* background: #fff; */
+      background-image: url('https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZEq5BwnEytseElNvc23fx-qmxmYBE6XflR5ATsp2enUHPvVFlxeR-nHBW0VCAWYDS-VhatZsxie68wKPunbVMewCdkWha2Ll4=w1910-h885-rw-v1');
+      background-size: cover;
       display: flex;
       width: 100%;
       min-height: 100vh;
@@ -63,21 +74,7 @@
   .box-divider--light-all-2 {
       box-shadow: inset 0 0 0 2px #e3e8ee;
   }
-  .box-background--blue {
-      background-color: #ca1f1f;
-  }
-  .box-background--white {
-    background-color: #ffffff;
-  }
-  .box-background--blue800 {
-      background-color: #212d63;
-  }
-  .box-background--gray100 {
-      background-color: #2378e0;
-  }
-  .box-background--cyan200 {
-      background-color: #7fd3ed;
-  }
+
   .padding-top--64 {
     padding-top: 64px;
   }
@@ -113,12 +110,14 @@
   }
 
   .formbg {
-      margin: 0px auto;
-      width: 100%;
-      max-width: 448px;
-      background: white;
-      border-radius: 4px;
-      box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    opacity: 0.85;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 448px;
+    background: #FAF8FF;
+    border-radius: 30px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 10px, rgba(0, 0, 0, 0.12) 0px 3px 6px 1px;
+
   }
   span {
       display: block;
@@ -154,13 +153,7 @@
       border-radius: 4px;
       outline-color: rgb(84 105 212 / 0.5);
       background-color: rgb(255, 255, 255);
-      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                  rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                  rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                  rgba(60, 66, 87, 0.16) 0px 0px 0px 1px,
-                  rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                  rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                  rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 6px 1px;
   }
 
   input[type="submit"] {
@@ -176,66 +169,4 @@
       font-weight: 600;
       cursor: pointer;
   }
-  .field-checkbox input {
-      width: 20px;
-      height: 15px;
-      margin-right: 5px;
-      box-shadow: unset;
-      min-height: unset;
-  }
-  .field-checkbox label {
-      display: flex;
-      align-items: center;
-      margin: 0;
-  }
-  a.ssolink {
-      display: block;
-      text-align: center;
-      font-weight: 600;
-  }
-  .footer-link span {
-      font-size: 14px;
-      text-align: center;
-  }
-  .listing a {
-      color: #697386;
-      font-weight: 600;
-      margin: 0 10px;
-  }
 
-  .animationRightLeft {
-    animation: animationRightLeft 2s ease-in-out infinite;
-  }
-  .animationLeftRight {
-    animation: animationLeftRight 2s ease-in-out infinite;
-  }
-  .tans3s {
-    animation: animationLeftRight 3s ease-in-out infinite;
-  }
-  .tans4s {
-    animation: animationLeftRight 4s ease-in-out infinite;
-  }
-
-  @keyframes animationLeftRight {
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(1000px);
-    }
-    100% {
-      transform: translateX(0px);
-    }
-  }
-
-  @keyframes animationRightLeft {
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(-1000px);
-    }
-    100% {
-      transform: translateX(0px);
-    }
-  }
