@@ -18,3 +18,4 @@ yarn-error.log
 /.vscode
 /server_data
 /public/qrcodes
+/routes
