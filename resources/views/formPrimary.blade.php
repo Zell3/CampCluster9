@@ -22,37 +22,37 @@
                 <label for="name" class="label">ชื่อ-นามสกุล</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">อีเมล</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ตำแหน่ง</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ประเภท</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">เบอร์โทรศัพท์</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ภาษาโปรแกรมที่ถนัด</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
 
             </div>
             <div class="data-add">
@@ -67,7 +67,7 @@
                 <label for="resume" class="label">เรซูเม่</label>
                 <br>
                 <br>
-                <a href="http://">resume.pdf</a>
+                <a href="http://" class="file">resume.pdf</a>
                 <br>
                 <br>
                 <div class="footer">

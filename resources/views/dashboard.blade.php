@@ -12,6 +12,14 @@
 
 <body>
     <header class="header-container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb" id="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="#" class="modifly-home">Home</a></li>
+                <li class="breadcrumb-item active-breadcrumb" aria-current="page">Page Name</li>
+            </ol>
+        </nav>
+
         <div class="profile">
             {{-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> --}}
             <div class="d-flex align-items-center">
@@ -23,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        {{-- <hr> --}}
     </header>
 
 
@@ -143,7 +151,15 @@
 
         });
     </script>
-
+    <script>
+        // เมื่อหน้าโหลดเสร็จแล้ว
+        document.addEventListener("DOMContentLoaded", function () {
+            // หา element ที่มี id เป็น 'breadcrumb-list'
+            var breadcrumbList = document.getElementById('breadcrumb-list');
+            // เปลี่ยนข้อความใน breadcrumb ให้เป็น title ของหน้าเว็บ
+            breadcrumbList.lastElementChild.innerText = document.title;
+        });
+    </script>
 
 
 
