@@ -40,7 +40,7 @@ class EditFormsController extends Controller
     {
 
         $forms = Edit_forms::findOrFail($id);
-        return view('edit_round', compact('forms'));
+        return view('editRound', compact('forms'));
     }
 
     /**
@@ -49,7 +49,7 @@ class EditFormsController extends Controller
     public function edit(String $id)
     {
         $forms = Edit_forms::findOrFail($id);
-        return view('edit_round', compact('forms'));
+        return view('editRound', compact('forms'));
 
 
         if($forms === null){
