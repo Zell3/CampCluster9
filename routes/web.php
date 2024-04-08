@@ -28,9 +28,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-Route::get("/",function(){
-    return redirect("/login");
-});
+// Route::get("/",function(){
+//     return redirect("/login");
+// });
 
 Route::get('/otp',function(){
     return view('otp');
@@ -40,7 +40,7 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::post('/form', function () {
+Route::get('/form', function () {
     return view('form');
 });
 
@@ -76,7 +76,7 @@ Route::get('/sendotp', [MailController::class,'index']);
 
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login",[authController::class,"login_auth"]);
+Route::post("/login-check",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
 
 // Edit Forms Routes
