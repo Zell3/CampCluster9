@@ -20,10 +20,13 @@ class Forms extends Model
     public $incrementing = true;
     public $timestamps = false;
     protected $fillable = [
+        'form_token',
+        'form_hr_id',
         'form_title',
         'form_location',
         'form_comment',
         'form_type',
+        'form_round',
         'form_created_at',
         'form_updated_at',
         'form_expired_at',

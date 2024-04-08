@@ -19,8 +19,5 @@ class FormsRoles extends Model
     protected $primaryKey = "fr_id";
     public $incrementing = true;
     public $timestamps = false;
-    protected $fillable = [
-        'fr_form_id',
-        'fr_ro_id'
-    ];
+
 }
