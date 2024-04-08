@@ -112,21 +112,22 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
 Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
 
-Route::get('/enter-email', function () {
-    return view('enter_email');
-});
+
 
 Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
 
 Route::post('/check-otp', [OTPController::class, 'checkOTP'])->name('send');
 
+Route::get('/enter-email', function () {
+    return view('enter_email');
+});
 
 Route::get('/enter-otp', function () {
     return view('enter_otp');
 });
 
 
-Route::post('/verify-otp', [OTPController::class, 'verifyOTP'])->name('verify-otp');
+Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-otp');
 
 Route::get('/send', function () {
     return view('email');

@@ -18,17 +18,7 @@ class OTPController extends Controller
         return redirect()->route('enter-otp')->with('email', $request->email);
     }
 
-    public function verifyOTP(Request $request)
-    {
-        $otp = $request->otp;
-        $email = $request->session()->get('email');
-
-        if ($otp == 'เงื่อนไขตรวจสอบ OTP') {
-            return "OTP ถูกต้อง";
-        } else {
-            return "OTP ไม่ถูกต้อง";
-        }
-    }
+   
 
     private function generateRandomNumber()
     {
