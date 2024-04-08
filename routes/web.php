@@ -89,4 +89,3 @@ Route::get('/showQR', function () {
 Route::get('/tableData', function () {
     return view('tableData');
 });
-Route::get("/logout",[authController::class,"logout"]);

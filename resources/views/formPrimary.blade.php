@@ -18,7 +18,6 @@
                 </svg>
                 &nbsp;&nbsp;&nbsp;สนใจ
             </div>
-
             <div class="data ">
                 <label for="name" class="label">ชื่อ-นามสกุล</label>
                 <br>
@@ -102,5 +101,13 @@
             </script>
 
         </div>
+        <script>
+            const heartIcon = document.querySelector('.heart');
+
+            heartIcon.addEventListener('click', () => {
+                heartIcon.classList.toggle('active');
+            });
+        </script>
+
     </div>
 @endsection
