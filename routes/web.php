@@ -25,6 +25,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
+Route::get('/editr',function(){
+    return view('edit_round');
+});
 Route::get("/",function(){
     return redirect("/login");
 });
