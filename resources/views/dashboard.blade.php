@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <a href="https://www.flaticon.com/free-icons/private-account" title="private account icons"></a>
     <link rel="stylesheet" href="{{ asset('/css/dashboard.css') }}">
-
 </head>
-
 <body>
+    <header class="header-container">
+        <div class="profile">
+            {{-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> --}}
+            <div class="d-flex align-items-center">
 
-
-    <div class="container-fluid">
+                <div class="flex-shrink-0 resize">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none show" data-bs-toggle="dropdown" aria-expanded="true">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                  </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div class="container-fluid ">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <div class="logo">
-                            <img src="https://blog.clicknext.com/wp-content/themes/clicknext_blog2/assets/images/clicknext-logo.png"
-                                alt="">
-                        </div>
-                        <a class="has-arrow" href="#" aria-expanded="true">
+            <div class="col-3">
+                <nav class="bg-light sidebar py-5 px-4">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <div class="logo">
+                                <img src="https://blog.clicknext.com/wp-content/themes/clicknext_blog2/assets/images/clicknext-logo.png"
+                                    alt="">
+                            </div>
+                            <a class="has-arrow" href="#" aria-expanded="true"></a>
                             <br>
                             <li class="nav-item ">
                                 <a class="nav-link active" href="#" aria-expanded="true">
                                     <div class="user-icon">
 
-                                        <img src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png"
-                                            alt="">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png" alt="">
                                     </div>
                                     &nbsp;&nbsp;&nbsp;รอบสมัคร
                                 </a>
@@ -52,18 +61,8 @@
                                     </div>
                                     &nbsp;&nbsp;&nbsp;สถิติ
                                 </a>
-                    </ul>
-
-                </div>
-            </nav>
-
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                <div class="chartjs-size-monitor"
-                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-                    <div class="chartjs-size-monitor-expand"
-                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="chartjs-size-monitor-shrink"
                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
@@ -91,59 +90,9 @@
                         </button>
                     </div>
                 </div>
-
-                {{-- <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th>วันที่</th>
-                                <th>ชื่อ-นามสกุล</th>
-                                <th>ประเภทผู้สมัคร</th>
-                                <th>ตำแหน่ง</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                            </tr>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                            </tr>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> --}}
             </main>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -203,10 +152,5 @@
 
         });
     </script>
-
-
-
-
 </body>
-
 </html>
