@@ -38,6 +38,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/form2', function () {
+    return view('form2');
+});
+
 Route::get('/login', function () {
     return view('auth/login');
 });
@@ -53,3 +57,13 @@ Route::get('/showQR', function () {
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
+
+Route::get('/showQR', function () {
+    return view('showQR');
+});
+
+Route::get('/tableData', function () {
+    return view('tableData');
+});
+
+
