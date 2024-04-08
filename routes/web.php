@@ -1,9 +1,7 @@
 <?php
+use App\Http\Controllers\formsController;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\EditFormsController;
-
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,14 +31,6 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
 Route::get('/filter',function(){
     return view('filter');
 });
@@ -57,7 +47,7 @@ Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/sidebar', function () {
     return view('dashboard');
 });
 
@@ -69,12 +59,14 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
+Route::resource('/createform', formsController::class);
+
+// Route::post('/createform', [formsController::class, 'store']);
 Route::get('/send', function () {
     return view('email');
 });
 
 Route::get('/sendmail', [MailController::class,'index']);
-
 Route::get('/sendotp', [MailController::class,'index']);
 
 
@@ -83,18 +75,15 @@ Route::post("/login",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
 
 // Edit Forms Routes
-Route::get('/editr/{id}', [EditFormsController::class, 'edit'])->name('editr.edit');
-Route::put("/editr/{id}",[EditFormsController::class, 'update'])->name('editr.update');
+Route::get('/editr/{id}', [formsController::class, 'edit'])->name('editr.edit');
+Route::put("/editr/{id}",[formsController::class, 'update'])->name('editr.update');
 
 Route::get('/round', function () {
     return view('makeRound');
 });
-
 Route::get('/showQR', function () {
     return view('showQR');
 });
-
 Route::get('/tableData', function () {
     return view('tableData');
 });
-Route::get("/logout",[authController::class,"logout"]);
