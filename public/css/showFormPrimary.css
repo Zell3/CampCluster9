@@ -30,8 +30,9 @@ hr{
 
     position: fixed;
     top: 70px; /* Adjust this value to match the height of the sticky header */
-    right: 20px;
-    left: 300px;
+    width: 60%;
+    height: 60%;
+    left: 30%;
     height: calc(100vh - 90px); /* Adjust this value to match the height of the sticky header */
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
@@ -54,16 +55,105 @@ hr{
 .label{
     height: 40px;
     width: 150px;
-    background-color: aquamarine;
+    background-color: #B3B3B3;
     text-align: center;
     border-radius: 20px;
     align-content: center;
 }
 
 .data-add{
-   margin-bottom: 6%;
+   margin-bottom: 5%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5%;
+    left: 50% ;
+    width: 20%;
+    text-align: center;
+    border-radius: 21px;
+}
+
+#sent {
+    width: 80%;
+    height: 44pt;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 900;
+    background-color: #FC5D83;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+#btn-back {
+    width: 66px;
+    height: 66px;
+    background-color: #3687FF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#btn-forward {
+    width: 66px;
+    height: 66px;
+    background-color: #3687FF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.back{
+    height: 40px;
+    width: 40px;
+}
+
+.go{
+    height:40px;
+    width: 40px;
+}
+
+.arrow{
+    display: flex;
+    margin-left: 30%;
+}
+
+.heart {
+    cursor: pointer;
+    font-size: 24px;
+    color: #8d8d8d;
+    transition: color 0.3s;
+    position: absolute;
+    margin-top: -70%;
+    margin-left: 70%;
+
+}
+
+.heart.active {
+    color: #ff0000;
+    animation: heartbeat 2s;
 }
 
 
-
-
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

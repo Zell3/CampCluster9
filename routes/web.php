@@ -49,3 +49,7 @@ Route::get('/edit', function () {
 Route::get('/showQR', function () {
     return view('showQR');
 });
+
+Route::get('/showFormPrimary', function () {
+    return view('formPrimary');
+});
