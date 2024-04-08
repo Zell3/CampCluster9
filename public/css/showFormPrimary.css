@@ -30,8 +30,9 @@ hr{
 
     position: fixed;
     top: 70px; /* Adjust this value to match the height of the sticky header */
-    right: 20px;
-    left: 300px;
+    width: 60%;
+    height: 60%;
+    left: 30%;
     height: calc(100vh - 90px); /* Adjust this value to match the height of the sticky header */
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
@@ -54,15 +55,12 @@ hr{
 .label{
     height: 40px;
     width: 150px;
-    background-color: aquamarine;
+    background-color: #B3B3B3;
     text-align: center;
     border-radius: 20px;
     align-content: center;
 }
 
-.data-add{
-   margin-bottom: 6%;
-}
 
 
 

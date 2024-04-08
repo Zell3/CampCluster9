@@ -33,14 +33,6 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
-Route::get('/sidebar',function(){
-    return view('dashboard');
-});
-
 Route::get('/filter',function(){
     return view('filter');
 });
@@ -97,4 +89,3 @@ Route::get('/showQR', function () {
 Route::get('/tableData', function () {
     return view('tableData');
 });
-Route::get("/logout",[authController::class,"logout"]);
