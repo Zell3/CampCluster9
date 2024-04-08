@@ -1,0 +1,102 @@
+.flexbox-make-round{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    /* justify-content: flex-end;
+    align-items: flex-start; */
+    height: 100vh;
+
+    /* margin-left: 30%; */
+
+}
+
+.flexbox-make-round .item{
+    margin-top: 5%;
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.flexbox-make-round .content{
+    background-color: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.flexbox-make-round label{
+    font-size: 16px;
+    margin-right: 20px;
+
+
+}
+
+.flexbox-make-round .ti,.lo{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width:100%;
+    max-width: 500px;
+    height: 25px;
+    font-size: 15px;
+    background-color: rgba(101, 100, 100, 0.213);
+    border: 0.5px solid rgba(0, 0, 0, 0.362);
+    border-radius: 10px;
+}
+
+
+.flexbox-make-round .checkbox{
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+.flexbox-make-round .date_s{
+    margin-top: 5px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    justify-content: center;
+    width: 150px;
+    font-size: 15px;
+
+}
+
+.flexbox-make-round .date_e{
+    margin-left: 20px;
+    justify-content: center;
+    width: 150px;
+    font-size: 15px;
+}
+
+.flexbox-make-round .comment{
+    background-color: rgba(101, 100, 100, 0.213);
+    margin-top: 5px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 15px;
+
+}
+
+.flexbox-make-round img{
+    margin-left: 30%;
+    margin-bottom: 10px;
+    width: 40%;
+    height: 40%;
+    border: 1px solid black;
+}
+
+.flexbox-make-round .submit{
+    margin-left: 40%;
+    max-width: 150px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border: 0px solid beige;
+    color: #ffffff;
+    background-color: rgba(0, 94, 255, 0.75);
+    border-radius: 10px;
+}
+
+.flexbox-make-round .submit:hover{
+    background-color:#0fd6a5be ;
+}
+
+
