@@ -31,7 +31,7 @@
 
     <div class="container-fluid ">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 all-responsive">
                 <nav class="bg-light sidebar py-5 px-4">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">

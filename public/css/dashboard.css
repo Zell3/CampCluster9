@@ -7,7 +7,7 @@
     background-color: #83868b;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #D0D5DD;
@@ -43,7 +43,7 @@ body{
     height: 20px;
 } */
 
-.resize{
+.resize {
     position: absolute;
     top: -8px;
     left: 1370px;
@@ -64,8 +64,8 @@ body{
     /* z-index: 1; */
 }
 
-.cutcol-content{
-    display:flex;
+.cutcol-content {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -186,10 +186,24 @@ img {
     max-width: 8000px;
 }
 
-.col-3{
+.col-3 {
     padding: 0 !important;
 }
 
-hr{
+hr {
     margin-top: 55px;
 }
+
+@media(max-width:768px) {
+    .responsive,
+    .cutcol-content {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .responsive,
+    .cutcol-content{
+      width: 70%;
+    }
+  }
