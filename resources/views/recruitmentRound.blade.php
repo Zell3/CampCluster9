@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/recruitment.css') }}">
-    
+
 </head>
 
 <body>
@@ -49,18 +49,21 @@
             <ol class="container-card">
                 <!-- ลูปเอาข้อมูลออกมาโชว์ -->
                 <?php foreach ($recruitments as $index => $recruitment) : ?>
-                    <div class="card">
-                        <label>เรื่อง: <?php echo $recruitment->form_title; ?></label>
-                        <br>
-                        <h1 ><?php echo $recruitment->form_location; ?><a  style="display:inline;" href=""><i class="fas fa-pen"></i></a></h1 >                         
-                        <br>
-                        <label>วันเริ่มต้น: <?php echo $recruitment->form_created_at; ?><a  style="display:inline;" href=""><i class="fas fa-qrcode"></i></a></label>
-                        <br>
-                        <label>วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label>                   
-                    </div>
+                    <a href="/tableData?form_id=<?php echo $recruitment->form_id; ?>">
+                        <div class="card">
+                            <label>เรื่อง: <?php echo $recruitment->form_title; ?></label>
+                            <br>
+                            <h1><?php echo $recruitment->form_location; ?><a style="display:inline;" href=""><i class="fas fa-pen"></i></a></h1>
+                            <br>
+                            <label>วันเริ่มต้น: <?php echo $recruitment->form_created_at; ?><a style="display:inline;" href=""><i class="fas fa-qrcode"></i></a></label>
+                            <br>
+                            <label>วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label>
+                        </div>                       
+                    </a>
                 <?php endforeach; ?>
             </ol>
         </div>
     </div>
 </body>
+
 </html>

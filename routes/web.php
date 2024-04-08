@@ -5,6 +5,7 @@ use App\Http\Controllers\MailController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RecruitmentController;
+use App\Http\Controllers\tableDataController;
 use App\Models\RecruitmentModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
