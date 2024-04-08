@@ -131,33 +131,3 @@ Route::post('/verify-otp', [OTPController::class, 'verifyOTP'])->name('verify-ot
 Route::get('/send', function () {
     return view('email');
 });
-
-Route::get('/sendmail', [MailController::class,'index']);
-
-Route::get('/sendotp', [MailController::class,'index']);
-
-
-Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login",[authController::class,"login_auth"]);
-Route::get("/logout",[authController::class,"logout"]);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
-Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
-
-Route::get('/enter-email', function () {
-    return view('enter_email');
-});
-
-Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
-
-Route::post('/check-otp', [OTPController::class, 'checkOTP'])->name('send');
-
-
-Route::get('/enter-otp', function () {
-    return view('enter_otp');
-});
-
-
-Route::post('/verify-otp', [OTPController::class, 'verifyOTP'])->name('verify-otp');
