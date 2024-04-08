@@ -8,7 +8,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="/form" method="POST" class="form">
+    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
         @csrf
         <div class="container-form">
             <label for="inputName" class="header">ชื่อ</label>
@@ -33,29 +33,29 @@
             <input type="text" name="email" required placeholder="กรอกอีเมล" class="inputText">
         </div>    
         <div class="container-form">
-            <label for="inputPosition" class="header">ตำแหน่ง</label>
+            <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
-            <select name="position" class="inputText">
+            <select name="role_name" class="inputText">
                 <option value="Developer">Developer</option>
                 <option value="Business Analyst">Business Analyst</option>
                 <option value="Tester">Tester</option>
-                <option value="Project Managment">Project Managment</option>
+                <option value="Project Managment">Project Management</option>
             </select>
         </div>
         <div class="container-form">
             <label for="inputProgramLanguage" class="header">ภาษาโปรแกรมที่ถนัด</label>
             <br>
-            <input type="text" name="ProgramLanguage" required placeholder="กรอกภาษาโปรแกรมที่ถนัด" class="inputText">
+            <input type="text" name="programlanguage" required placeholder="กรอกภาษาโปรแกรมที่ถนัด" class="inputText">
         </div>
         <div class="container-form">
             <label for="inputaddInformation" class="header">ข้อมูลเพิ่มเติม</label>
             <br>
-            <textarea name="addInformation" cols="30" rows="5"  placeholder="กรอกข้อมูลเพิ่มเติม" class="inputTextArea"></textarea>
+            <textarea name="addinformation" cols="30" rows="5"  placeholder="กรอกข้อมูลเพิ่มเติม" class="inputTextArea"></textarea>
         </div>
         <div class="container-form">
             <label for="inputResume" class="header">Resume(PDF, PNG, JPEG)</label>
             <br>
-            <input type="file" name="file" class="inputFile">
+            <input type="file" name="image" class="inputFile">
         </div>
 
         <div class="information">ขนาดไฟล์ของเอกสารของคุณไม่ควรเกิน 10MB</div>
@@ -75,7 +75,7 @@
         <div class="container-form">
             <label for="inputEducationBackground" class="header">ประวัติการศึกษา</label>
             <br>
-            <textarea name="educationBackground" required cols="30" rows="5" placeholder="กรอกประวัติการศึกษา" class="inputTextArea"></textarea>
+            <textarea name="educationbackground" required cols="30" rows="5" placeholder="กรอกประวัติการศึกษา" class="inputTextArea"></textarea>
         </div>
         <div class="container-form">
             <label for="inputLanguage" class="header">ภาษาสื่อสารที่ถนัด</label>
