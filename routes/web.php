@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\formsController;
 use App\Http\Controllers\userController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -53,3 +53,6 @@ Route::get('/login', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::resource('/createform', formsController::class);
+// Route::post('/createform', [formsController::class, 'store']);
