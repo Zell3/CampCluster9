@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="{{ asset('css/showFormAddition.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>showFromPrimary</title>
 
 
-</head>
-
-<body>
-    <div class="sidebar">side bar</div>
-    <header class="header-container">
+{{-- <body> --}}
+    {{-- <div class="sidebar">side bar</div> --}}
+    {{-- <header class="header-container">
         <div class="profile">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </div>
         <hr>
-    </header>
+    </header> --}}
 
     <div class="page">
         <div class="flexbox">
@@ -119,12 +111,12 @@
             </div>
 
             <div class="arrow footer">
-                <button type="button" id="btn-back">
+                <a href="#"><button type="button" id="btn-back"></a>
                     <svg class="go" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
                       </svg>                </button>
                 &nbsp;
-                <button type="button" id="btn-forward">
+                <a href="#"><button type="button" id="btn-forward"></a>
                     <svg class="back" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                       </svg>
@@ -134,5 +126,9 @@
         </div>
     </div>
 
-</body>
+{{-- </body> --}}
+
 </html>
+
+
+@endsection

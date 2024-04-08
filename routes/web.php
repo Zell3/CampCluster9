@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditFormsController;
 use App\Http\Controllers\userController;
@@ -24,8 +23,16 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
+Route::get("/",function(){
+    return redirect("/login");
+});
+
 Route::get('/otp',function(){
     return view('otp');
+});
+
+Route::get('/sidebar',function(){
+    return view('dashboard');
 });
 
 Route::get('/sidebar',function(){

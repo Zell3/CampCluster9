@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Clicknext: Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <title>Clicknext: Login</title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
 <body>
@@ -11,10 +13,6 @@
         <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
             <div class="formbg-outer">
                 <div class="formbg">
-                    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                        <img src="https://lh6.googleusercontent.com/proxy/cyexBRM7hR7vutWwKF2RncwXo81OWRVgm-qmb8wGuaNlSRvGG7Z4uQTMQQcpFy0y4d7iA3i-RPj1UT8cxYDyBYER46U4rGqcqR5t-bLdGesNiA" alt="" class="logoclicknext">
-                        <h1><a href="" rel="dofollow">Clicknext</a></h1>
-                    </div>
                     <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
                         <img src="https://lh6.googleusercontent.com/proxy/cyexBRM7hR7vutWwKF2RncwXo81OWRVgm-qmb8wGuaNlSRvGG7Z4uQTMQQcpFy0y4d7iA3i-RPj1UT8cxYDyBYER46U4rGqcqR5t-bLdGesNiA" alt="" class="logoclicknext">
                         <h1><a href="" rel="dofollow">Clicknext</a></h1>
@@ -27,7 +25,6 @@
                             @csrf
                             <div class="field padding-bottom--24">
                                 <label class="font-text" for="email">อีเมล</label>
-                                <input type="email" name="email" placeholder="username@gmail.com" required>
                                 <input type="email" name="email" placeholder="username@gmail.com" required>
                             </div>
                             <div class="field padding-bottom--24">
