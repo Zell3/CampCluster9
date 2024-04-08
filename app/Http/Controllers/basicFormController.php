@@ -7,7 +7,7 @@ use App\Models\roleModel;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class userController extends Controller
+class basicFormController extends Controller
 {
     public function index()
     {
