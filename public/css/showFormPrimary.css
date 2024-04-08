@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-/* :root {
+:root {
     font-family: sarabun;
     margin: 0%;
     padding: 0%;
     background-color: #D0D5DD;
-} */
+}
 
 .show-formPrimary .profile {
     display: flex;
@@ -14,6 +14,10 @@
     padding: 10px;
 }
 
+.show-formPrimary .data{
+    margin-left: 15%;
+    max-height: 570px;
+}
 
 .show-formPrimary hr {
     margin: 0px !important;
@@ -63,13 +67,14 @@
 }
 
 .show-formPrimary .data-add {
-    margin-bottom: 5%;
+    margin-bottom: 12%;
+    margin-left: 20%;
 }
 
 .show-formPrimary .footer {
     position: absolute;
     bottom: 5%;
-    left: 50%;
+    left: 45%;
     width: 20%;
     text-align: center;
     border-radius: 21px;
@@ -86,6 +91,7 @@
     border: none;
     border-radius: 100px;
     cursor: pointer;
+    margin-left: 30%;
 }
 
 .show-formPrimary #btn-back {
@@ -138,7 +144,8 @@
     transition: color 0.3s;
     position: absolute;
     margin-top: -70%;
-    margin-left: 70%;
+    margin-left: 80%;
+    margin-bottom: 5%;
 
 }
 
@@ -160,4 +167,5 @@
     100% {
         transform: scale(1);
     }
+
 }
