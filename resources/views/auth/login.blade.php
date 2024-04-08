@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Clicknext: Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <title>Clicknext: Login</title>
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
 <body>
@@ -31,7 +29,6 @@
                                 <div class="grid--50-50">
                                     <label class="font-text" for="password">รหัสผ่าน</label>
                                 </div>
-                                <input type="password" name="password" placeholder="Password" required>
                                 <input type="password" name="password" placeholder="Password" required>
                             </div>
 
