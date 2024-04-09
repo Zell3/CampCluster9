@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 
@@ -46,16 +47,88 @@
         <div class="item">
             {{-- filter button --}}
             {{-- set path to filter page here --}}
-            <div class="filter">
-                <a href="#"><button class="btn-filter-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+            <div>
+                <a href="#"><button class="btn-filter-bg" id = "filterBtn"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
                             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                        </svg></button></a>
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
     </div>
     {{-- </form> --}}
 
-    {{-- filter button --}}
+    {{-- filter action --}}
+    <div id="filterPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+                        <!-- Filter form or options go here -->
+                <form>
+                    <div class="container-grid">
+                        <div class="Date">
+                            <label for="startDate">วันที่</label>
+                            <input type="date" id="startDate" name="startDate">
+                            <label for="endDate" class="endDate">ถึง</label>
+                            <input type="date" id="endDate" name="endDate">
+                        </div>
+
+                        <div class="type">
+                            <label>ประเภทผู้สมัคร</label>
+                            <br>
+                            <input type="checkbox" id="jobApplication" name="type" value="jobApplication">
+                            <label for="jobApplication">สหกิจ</label>
+                            <br>
+                            <input type="checkbox" id="internship" name="type" value="internship">
+                            <label for="internship">พนักงาน</label>
+                        </div>
+
+                        <div class="status">
+                            <label>แสดงสถานะ</label>
+                            <br>
+                            <input type="checkbox" id="read" name="status" value="read">
+                            <label for="read">อ่านแล้ว</label>
+                            <br>
+                            <input type="checkbox" id="unread" name="status" value="unread">
+                            <label for="unread">ยังไม่อ่าน</label>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="statusEmail">สถานะอีเมล</label>
+                            <br>
+                            <input type="checkbox" id="waiting" name="emailStatus" value="waiting">
+                            <label for="waiting">อ่านแล้ว</label>
+                            <br>
+                            <input type="checkbox" id="responded" name="emailStatus" value="responded">
+                            <label for="responded">ยังไม่อ่าน</label>
+                        </div>
+
+                        <div class="position">
+                            <label for="position">ตำแหน่ง</label>
+                            <br>
+                            <input type="checkbox" id="internship" name="type" value="internship">
+                            <label for="internship">System Analyst</label>
+                            <br>
+                            <input type="checkbox" id="internship" name="type" value="internship">
+                            <label for="internship">Business Analyst</label>
+                            <br>
+                            <input type="checkbox" id="internship" name="type" value="internship">
+                            <label for="internship">Tester</label>
+                            <br>
+                            <input type="checkbox" id="internship" name="type" value="internship">
+                            <label for="internship">Programmer</label>
+                            </div>
+
+                            <br>
+                            {{-- button go here --}}
+                            <div class="button">
+                            <button type="button" id="applyFilter" class="save">บันทึก</button>
+                            <button type="button" id="cancelFilter" class="cancle">ยกเลิก</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     {{-- table --}}
     <div class="table-responsive">
@@ -96,5 +169,65 @@
             </tbody>
         </table>
     </div>
+
+    {{-- pop up --}}
+    <script>
+        const filterBtn = document.getElementById('filterBtn');
+        const filterPopup = document.getElementById('filterPopup');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        const applyFilterBtn = document.getElementById('applyFilter');
+        const cancelFilterBtn = document.getElementById('cancelFilter');
+
+        // Open filter popup
+        filterBtn.onclick = function() {
+            filterPopup.style.display = 'block';
+        }
+
+        // Close filter popup
+        closeBtn.onclick = function() {
+            filterPopup.style.display = 'none';
+        }
+
+        // Close popup when clicked outside
+        window.onclick = function(event) {
+            if (event.target == filterPopup) {
+                filterPopup.style.display = 'none';
+            }
+        }
+
+        // Apply filter
+        applyFilterBtn.onclick = function() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const typeCheckboxes = document.querySelectorAll('input[name="type"]:checked');
+            const types = Array.from(typeCheckboxes).map(checkbox => checkbox.value);
+            const statusCheckboxes = document.querySelectorAll('input[name="status"]:checked');
+            const statuses = Array.from(statusCheckboxes).map(checkbox => checkbox.value);
+            const emailStatusCheckboxes = document.querySelectorAll('input[name="emailStatus"]:checked');
+            const emailStatuses = Array.from(emailStatusCheckboxes).map(checkbox => checkbox.value);
+            const positionSelect = document.getElementById('position');
+            const positions = Array.from(positionSelect.selectedOptions).map(option => option.value);
+
+            // Perform filtering logic here based on the filter values
+            console.log('Start Date:', startDate);
+            console.log('End Date:', endDate);
+            console.log('Types:', types);
+            console.log('Statuses:', statuses);
+            console.log('Email Statuses:', emailStatuses);
+            console.log('Positions:', positions);
+
+            // Close popup after applying filter
+            filterPopup.style.display = 'none';
+        }
+
+        cancelFilterBtn.onclick = function() {
+            // Reset filter form values if needed
+            // ...
+
+            // Close popup without applying filter
+            filterPopup.style.display = 'none';
+        }
+    </script>
 </body>
+
 </html>
