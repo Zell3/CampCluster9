@@ -94,6 +94,9 @@ Route::get('/showQR', function () {
 Route::resource('recruitmentRound', RecruitmentController::class);
 Route::resource('tableData', tableDataController::class);
 
+
+Route::get('/', [RecruitmentController::class, 'index'])->name('home');
+
 Route::get('/send', function () {
     return view('email');
 });
@@ -132,3 +135,4 @@ Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-o
 Route::get('/send', function () {
     return view('email');
 });
+
