@@ -130,3 +130,6 @@ Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 Route::get('/send', function () {
     return view('email');
 });
+Route::get('/makeRound', function () {
+    return view('makeRound');
+});
