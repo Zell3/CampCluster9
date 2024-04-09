@@ -12,19 +12,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$email = $_POST['email'];
-$otp = $_POST['otp'];
+$email = $_POST['email_name'];
+$otp = $_POST['email_otp'];
 
 if ($otp === $_SESSION['otp']) {
-    $sql = "SELECT * FROM emails WHERE email='$email' AND otp='$otp'";
+    $sql = "SELECT * FROM emails WHERE email_name='$email' AND email_otp='$otp'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // ถ้ามีข้อมูลที่ตรงกัน ให้ทำตามขั้นตอนต่อไป
         // เช่นเปลี่ยนสถานะการใช้งานของ OTP หรืออื่น ๆ
         // ส่งไปหน้าที่คุณต้องการ
-        header("Location: success.php");
-        exit();
+        return redirect('/login');
     } else {
         echo "Invalid email or OTP.";
     }

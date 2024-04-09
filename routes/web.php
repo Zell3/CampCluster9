@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,15 +108,13 @@ Route::get('/sendotp', [MailController::class,'index']);
 
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login",[authController::class,"login_auth"]);
+Route::post("/login-check",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
 Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
-
-
 
 Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
 
@@ -129,10 +128,12 @@ Route::get('/enter-otp', function () {
     return view('enter_otp');
 });
 
-
-Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-otp');
+Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
 Route::get('/send', function () {
     return view('email');
 });
 
+Route::get('/makeRound', function () {
+    return view('makeRound');
+});

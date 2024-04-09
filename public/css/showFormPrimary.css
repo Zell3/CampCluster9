@@ -30,8 +30,6 @@
 
 
 .show-formPrimary .page {
-
-
     position: fixed;
     top: 70px;
     width: 1000px;
@@ -141,7 +139,7 @@
     color: #8d8d8d;
     transition: color 0.3s;
     position: absolute;
-    margin-top: -640px;
+    margin-top: -590px;
     margin-left: 780px;
 
 }
@@ -149,17 +147,15 @@
 .show-formPrimary .text-like{
     font-size: 24px;
     color: #8d8d8d;
-    margin-top: -640px;
+    margin-top: -590px;
     margin-left: 820px;
     position: absolute;
 }
-
 
 .show-formPrimary .heart.active-heart {
     color: #ff0000;
 
 }
-
 
 .file{
     padding: 0;
