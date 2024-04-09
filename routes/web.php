@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +32,12 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get("/",function(){
-//     return redirect("/login");
-// });
+Route::get('/editr',function(){
+    return view('edit_round');
+});
+Route::get("/",function(){
+    return redirect("/login");
+});
 
 Route::get('/otp',function(){
     return view('otp');
