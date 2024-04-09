@@ -36,7 +36,7 @@
             <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
             <select name="role_name" class="inputText">
-                <option value="Developer">Developer</option>
+                <option value="System Analyst">System Analyst</option>
                 <option value="Business Analyst">Business Analyst</option>
                 <option value="Tester">Tester</option>
                 <option value="Project Managment">Project Management</option>
