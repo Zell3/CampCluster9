@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\basicFormController;
+use App\Http\Controllers\additionalFormController;
 use App\Http\Controllers\formsController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\MailController;
@@ -44,6 +46,8 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::resource("/form",basicFormController::class);
+
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
@@ -59,6 +63,8 @@ Route::get('/sidebar', function () {
 Route::get('/form2', function () {
     return view('form2');
 });
+
+Route::resource("/form2",additionalFormController::class);
 
 Route::get('/edit', function () {
     return view('edit');
