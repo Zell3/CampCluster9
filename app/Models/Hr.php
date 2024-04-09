@@ -36,7 +36,7 @@ class Hr extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'hr_password',
+        'password',
         'remember_token',
     ];
 
