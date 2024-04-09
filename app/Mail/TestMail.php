@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Carbon\Carbon;
+
 
 class TestMail extends Mailable
 {
@@ -19,12 +21,10 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($email,$otp)
+    public function __construct($email, $otp)
     {
         $this->email = $email;
-        $this->otp = $this->generateRandomNumber();
-
-
+        $this->otp = $otp !== null ? $otp : $this->generateRandomNumber();
         $this->saveOTPToDatabase();
     }
 
@@ -48,13 +48,14 @@ class TestMail extends Mailable
      * @return void
      */
     public function saveOTPToDatabase()
-{
-
+    {
+        Carbon::setLocale('th');
+        
         $emailModel = new Email();
         $emailModel->email_name = $this->email;
         $emailModel->email_otp = $this->otp;
+        $emailModel->email_create_at = Carbon::now('Asia/Bangkok');
         $emailModel->save();
-        
     }
 
     /**
@@ -65,7 +66,7 @@ class TestMail extends Mailable
     public function build()
     {
         return $this->view('emails.demoMail')
-                    ->subject('Mail')
-                    ->with(['otp' => $this->otp]);
+            ->subject('Mail')
+            ->with(['otp' => $this->otp]);
     }
 }
