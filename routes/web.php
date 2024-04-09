@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\basicFormController;
+use App\Http\Controllers\additionalFormController;
 use App\Http\Controllers\formsController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\formAdditionController;
@@ -16,6 +18,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +34,12 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get("/",function(){
-//     return redirect("/login");
-// });
+Route::get('/editr',function(){
+    return view('edit_round');
+});
+Route::get("/",function(){
+    return redirect("/login");
+});
 
 Route::get('/otp',function(){
     return view('otp');
@@ -46,6 +52,8 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::resource("/form",basicFormController::class);
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
@@ -62,6 +70,8 @@ Route::get('/sidebar', function () {
 Route::get('/form2', function () {
     return view('form2');
 });
+
+Route::resource("/form2",additionalFormController::class);
 
 Route::get('/edit', function () {
     return view('edit');
