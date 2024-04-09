@@ -45,7 +45,7 @@
             <br>
             <label for="language" class="label">ภาษาโปรแกรมที่ถนัด</label>
             <br>
-            <label for="language">{{ $basicData->bdu_skill }}</label>
+            <label for="language">{{ $basicData->bdu_language_program }}</label>
         </div>
         <div class="data-add">
             <label for="additional-info" class="label">ข้อมูลเพิ่มเติม</label>
@@ -56,7 +56,7 @@
             <br>
             <label for="resume" class="label">เรซูเม่</label>
             <br>
-            
+
             <br>
             <br <div class="footer">
             <button type="submit" id="sent">ส่งอีเมล</button>

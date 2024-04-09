@@ -6,15 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
-    <title>Table</title>
+    <title>Applicants List</title>
 </head>
-
 <body>
-
     {{-- header --}}
     <header class="p-3 mb-3 border-bottom">
         <div class="container"></div>
@@ -22,115 +17,37 @@
 
     {{-- sidebar for test --}}
     <div class="sidebar">test</div>
-    {{-- <form> --}}
-    <div class="tools-flex-box">
 
+    <div class="tools-flex-box">
         {{-- email button --}}
         <div class="item">
             <div class="btn-email">
-
                 <a href="#"><button class="btn-email-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
                         </svg></button></a>
             </div>
         </div>
 
+        {{-- search bar --}}
         <div class="item">
-            {{-- search  bar --}}
             <div class="searchBar">
-                <input type="text" placeholder="Search" class="inputSearch">
-                <button class=" btn-search-bg"><svg class="iconColor xmlns=" http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <input type="text" id="searchInput" placeholder="Search" class="inputSearch" style="margin-right: 10px;">
+                <button onclick="search()" class="btn-search-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg></button>
             </div>
         </div>
+
+        {{-- filter button --}}
         <div class="item">
-            {{-- filter button --}}
-            {{-- set path to filter page here --}}
-            <div>
-                <a href="#"><button class="btn-filter-bg" id = "filterBtn"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+            <div class="filter">
+                <a href="#"><button class="btn-filter-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
                             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                    </button>
-                </a>
+                        </svg></button></a>
             </div>
         </div>
     </div>
-    {{-- </form> --}}
 
-    {{-- filter action --}}
-    <div id="filterPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-                        <!-- Filter form or options go here -->
-                <form>
-                    <div class="container-grid">
-                        <div class="Date">
-                            <label for="startDate">วันที่</label>
-                            <input type="date" id="startDate" name="startDate">
-                            <label for="endDate" class="endDate">ถึง</label>
-                            <input type="date" id="endDate" name="endDate">
-                        </div>
-
-                        <div class="type">
-                            <label>ประเภทผู้สมัคร</label>
-                            <br>
-                            <input type="checkbox" id="jobApplication" name="type" value="jobApplication">
-                            <label for="jobApplication">สหกิจ</label>
-                            <br>
-                            <input type="checkbox" id="internship" name="type" value="internship">
-                            <label for="internship">พนักงาน</label>
-                        </div>
-
-                        <div class="status">
-                            <label>แสดงสถานะ</label>
-                            <br>
-                            <input type="checkbox" id="read" name="status" value="read">
-                            <label for="read">อ่านแล้ว</label>
-                            <br>
-                            <input type="checkbox" id="unread" name="status" value="unread">
-                            <label for="unread">ยังไม่อ่าน</label>
-                        </div>
-                        <br>
-                        <div>
-                            <label class="statusEmail">สถานะอีเมล</label>
-                            <br>
-                            <input type="checkbox" id="waiting" name="emailStatus" value="waiting">
-                            <label for="waiting">อ่านแล้ว</label>
-                            <br>
-                            <input type="checkbox" id="responded" name="emailStatus" value="responded">
-                            <label for="responded">ยังไม่อ่าน</label>
-                        </div>
-
-                        <div class="position">
-                            <label for="position">ตำแหน่ง</label>
-                            <br>
-                            <input type="checkbox" id="internship" name="type" value="internship">
-                            <label for="internship">System Analyst</label>
-                            <br>
-                            <input type="checkbox" id="internship" name="type" value="internship">
-                            <label for="internship">Business Analyst</label>
-                            <br>
-                            <input type="checkbox" id="internship" name="type" value="internship">
-                            <label for="internship">Tester</label>
-                            <br>
-                            <input type="checkbox" id="internship" name="type" value="internship">
-                            <label for="internship">Programmer</label>
-                            </div>
-
-                            <br>
-                            {{-- button go here --}}
-                            <div class="button">
-                            <button type="button" id="applyFilter" class="save">บันทึก</button>
-                            <button type="button" id="cancelFilter" class="cancle">ยกเลิก</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    {{-- table --}}
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -148,21 +65,17 @@
             </thead>
             <tbody>
                 <?php foreach ($applicants as $index => $applicant) : ?>
-                    <tr>
+                    <tr class="searchable">
                         <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle" viewBox="0 0 16 16">
                                 <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a6 6 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707s.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a6 6 0 0 1 1.013.16l3.134-3.133a3 3 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146m.122 2.112v-.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a5 5 0 0 0-.288-.076 5 5 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a5 5 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034q.172.002.343-.04L9.927 2.028q-.042.172-.04.343a1.8 1.8 0 0 0 .062.46z" />
                             </svg></td>
                         <td><input type="checkbox" name="" id=""></td>
                         <td><?php echo $applicant->bdu_register_date; ?></td>
-                        <td><?php echo $applicant->bdu_name; ?>
-                            <?php echo $applicant->bdu_lastname; ?>
-                        </td>
+                        <td><?php echo $applicant->bdu_name; ?> <?php echo $applicant->bdu_lastname; ?></td>
                         <td><?php echo $applicant->bdu_working; ?></td>
                         <td><?php echo $applicant->role->ro_name; ?></td>
-                        {{-- ใส่ลิงก์ฟอร์ม --}}
-                        <td><a href="#"><button class="btn-link">ฟอร์มเบื้องต้น</button></a></td>
-                        {{-- ใส่ลิงก์ฟอร์ม --}}
-                        <td><a href="#"><button class="btn-link">ฟอร์มเพิ่มเติม</button></a></td>
+                        <td><a href="{{ route('form.primary', ['id' => $applicant->bdu_id]) }}"><button class="btn-link">ฟอร์มเบื้องต้น</button></a></td>
+                        <td><a href="{{ route('showAdditionalData', ['id' => $applicant->bdu_id]) }}"><button class="btn-link">ฟอร์มเพิ่มเติม</button></a></td>
                         <td><a href="#"><button class="btn-status-done">Done</button></a></td>
                     </tr>
                 <?php endforeach; ?>
@@ -170,64 +83,30 @@
         </table>
     </div>
 
-    {{-- pop up --}}
     <script>
-        const filterBtn = document.getElementById('filterBtn');
-        const filterPopup = document.getElementById('filterPopup');
-        const closeBtn = document.getElementsByClassName('close')[0];
-        const applyFilterBtn = document.getElementById('applyFilter');
-        const cancelFilterBtn = document.getElementById('cancelFilter');
-
-        // Open filter popup
-        filterBtn.onclick = function() {
-            filterPopup.style.display = 'block';
-        }
-
-        // Close filter popup
-        closeBtn.onclick = function() {
-            filterPopup.style.display = 'none';
-        }
-
-        // Close popup when clicked outside
-        window.onclick = function(event) {
-            if (event.target == filterPopup) {
-                filterPopup.style.display = 'none';
+        // ฟังก์ชันค้นหารายชื่อ
+        function search() {
+            var input = document.getElementById("searchInput").value.trim().toUpperCase();
+            var rows = document.querySelectorAll('.searchable');
+            if (input === "") {
+                // แสดงทุกรายการเมื่อไม่มีข้อความในช่องค้นหา
+                rows.forEach(function(row) {
+                    row.style.display = '';
+                });
+                return;
             }
-        }
-
-        // Apply filter
-        applyFilterBtn.onclick = function() {
-            const startDate = document.getElementById('startDate').value;
-            const endDate = document.getElementById('endDate').value;
-            const typeCheckboxes = document.querySelectorAll('input[name="type"]:checked');
-            const types = Array.from(typeCheckboxes).map(checkbox => checkbox.value);
-            const statusCheckboxes = document.querySelectorAll('input[name="status"]:checked');
-            const statuses = Array.from(statusCheckboxes).map(checkbox => checkbox.value);
-            const emailStatusCheckboxes = document.querySelectorAll('input[name="emailStatus"]:checked');
-            const emailStatuses = Array.from(emailStatusCheckboxes).map(checkbox => checkbox.value);
-            const positionSelect = document.getElementById('position');
-            const positions = Array.from(positionSelect.selectedOptions).map(option => option.value);
-
-            // Perform filtering logic here based on the filter values
-            console.log('Start Date:', startDate);
-            console.log('End Date:', endDate);
-            console.log('Types:', types);
-            console.log('Statuses:', statuses);
-            console.log('Email Statuses:', emailStatuses);
-            console.log('Positions:', positions);
-
-            // Close popup after applying filter
-            filterPopup.style.display = 'none';
-        }
-
-        cancelFilterBtn.onclick = function() {
-            // Reset filter form values if needed
-            // ...
-
-            // Close popup without applying filter
-            filterPopup.style.display = 'none';
+            rows.forEach(function(row) {
+                var nameColumn = row.getElementsByTagName('td')[3];
+                if (nameColumn) {
+                    var nameValue = nameColumn.textContent || nameColumn.innerText;
+                    if (nameValue.toUpperCase().indexOf(input) > -1) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
         }
     </script>
 </body>
-
 </html>

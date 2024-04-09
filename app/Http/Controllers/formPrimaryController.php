@@ -16,16 +16,20 @@ class formPrimaryController extends Controller
 
     // public function downloadPDF($id)
     // {
-    //     $applicants = tableDataModel::findOrFail($id);
-        
-    //     // ดึงไฟล์ PDF จากฐานข้อมูล (blob) และแปลงเป็น binary data
-    //     $pdfContent = $applicants->bdu_resume_file;
+    //     $applicant = tableDataModel::findOrFail($id);
 
-    //     // สร้าง response ด้วย binary data ของไฟล์ PDF
-    //     return Response::make($pdfContent, 200, [
-    //         'Content-Type' => 'application/pdf',
-    //         'Content-Disposition' => 'inline; filename="' . $applicants->bdu_resume_name . '"'
-    //     ]);
+    //     // ดึงข้อมูลไฟล์ PDF จากฐานข้อมูล (blob)
+    //     $pdfData = $applicant->bdu_resume_file;
+
+    //     // แปลงข้อมูลให้เป็น binary data
+    //     $pdfBinaryData = stream_get_contents($pdfData);
+
+    //     // กำหนดชื่อไฟล์
+    //     $filename = $applicant->bdu_resume_name;
+
+    //     // สร้าง response สำหรับการดาวน์โหลด
+    //     return response($pdfBinaryData)
+    //         ->header('Content-Type', 'application/pdf')
+    //         ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
     // }
-   
 }
