@@ -8,7 +8,7 @@
     <div class="show-formPrimary">
         <div class="page d-flex justify-content-evenly align-items-center ">
             <div class="heart ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
                   </svg>
             </div>
@@ -54,8 +54,8 @@
                 <label for="additional-info" class="label">ข้อมูลเพิ่มเติม</label>
                 <br>
                 <br>
-
-                <textarea  name="additional-info" id="additional-info" cols="30" rows="10" >ปด้ะ้ผด้ผะ้</textarea>
+                <textarea class="form-control set-data" id="email" cols="30" rows="10" disabled>ปด้ะ้ผด้ผะ้</textarea>
+                {{-- <input type="text" class="form-control set-data" id="name" value="ปด้ะ้ผด้ผะ้" cols="30" rows="10"disabled> --}}
                 <br>
                 <br>
 

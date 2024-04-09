@@ -30,19 +30,6 @@
 
 
 .show-formPrimary .page {
-
-    /* position: fixed;
-    top: 70px;
-
-    width: 60%;
-    height: 60%;
-    left: 30%;
-    height: calc(100vh - 90px);
-
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 3%; */
-
     position: fixed;
     top: 70px;
     width: 1000px;
@@ -77,8 +64,8 @@
 }
 
 .show-formPrimary .data-add {
-    margin-bottom: 12%;
-    margin-left: 20%;
+    margin-bottom: 100px;
+    margin-left: 220px;
 }
 
 .show-formPrimary .footer {
@@ -153,7 +140,7 @@
     transition: color 0.3s;
     position: absolute;
     margin-top: -640px;
-    margin-left: 660px;
+    margin-left: 780px;
 
 }
 
@@ -161,20 +148,26 @@
     font-size: 24px;
     color: #8d8d8d;
     margin-top: -640px;
-    margin-left: 720px;
+    margin-left: 820px;
     position: absolute;
 }
-
 
 .show-formPrimary .heart.active-heart {
     color: #ff0000;
 
 }
 
-.set-data , .file{
-    margin-left: 20px;
-}
-
 .file{
     padding: 0;
+}
+
+.show-formPrimary textarea[disabled] {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: not-allowed;
+    resize: none;
 }
