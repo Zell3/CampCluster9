@@ -25,12 +25,15 @@ class Forms extends Model
         'form_title',
         'form_location',
         'form_comment',
-        'form_type',
-        'form_round',
         'form_created_at',
         'form_updated_at',
         'form_expired_at',
         'form_is_employee',
-        'form_is_cooperative'
+        'form_is_cooperative',
+        'form_ro_id'
+    ];
+
+    protected $casts = [
+        'form_ro_id' => 'json'
     ];
 }
