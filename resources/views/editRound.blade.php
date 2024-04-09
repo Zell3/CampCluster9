@@ -27,7 +27,7 @@
                             $roles = DB::table('roles')->pluck('ro_name', 'ro_id');
 
                             // ดึงข้อมูลจาก forms_ro_id ที่ถูกเก็บเป็น JSON array และทำการแปลงเป็น array ด้วย json_decode() ก่อนนำไปใช้งานได้ใน in_array()
-                            $selectedRoles = json_decode($forms->form_ro_id);
+                            $selectedRoles = $forms->form_ro_id;
 
                             // เชื่อมตาราง roles กับ forms_ro_id และหาค่าที่ตรงกัน
                             $selectedRolesNames = collect($roles)->only($selectedRoles)->all();
