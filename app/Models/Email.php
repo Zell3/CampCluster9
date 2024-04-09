@@ -24,4 +24,12 @@ class Email extends Model
         'email_otp',
         'email_create_at'
     ];
+
+    public function deleteOTPFromDatabase()
+    {
+        $this->delete();
+    }
+    
+
+    
 }
