@@ -15,10 +15,9 @@
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" id="breadcrumb-list">
-                <li class="breadcrumb-item"><a href="#" class="modifly-home">Home</a></li>
+               <li class="breadcrumb-item"><a href="#" class="modifly-home">Home</a></li>
                 <li class="breadcrumb-item active-breadcrumb" aria-current="page">Page Name</li>
             </ol>
-        </nav>
 
         <div class="profile">
             {{-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> --}}

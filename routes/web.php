@@ -1,6 +1,10 @@
 <?php
+use App\Http\Controllers\basicFormController;
+use App\Http\Controllers\additionalFormController;
 use App\Http\Controllers\formsController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\formAdditionController;
+use App\Http\Controllers\formPrimaryController;
 use App\Http\Controllers\MailController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -12,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
+
 
 
 /*
@@ -29,9 +34,12 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-// Route::get("/",function(){
-//     return redirect("/login");
-// });
+Route::get('/editr',function(){
+    return view('edit_round');
+});
+Route::get("/",function(){
+    return redirect("/login");
+});
 
 Route::get('/otp',function(){
     return view('otp');
@@ -44,6 +52,8 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::resource("/form",basicFormController::class);
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
@@ -60,6 +70,8 @@ Route::get('/sidebar', function () {
 Route::get('/form2', function () {
     return view('form2');
 });
+
+Route::resource("/form2",additionalFormController::class);
 
 Route::get('/edit', function () {
     return view('edit');
@@ -92,8 +104,27 @@ Route::get('/showQR', function () {
     return view('showQR');
 });
 
+// รอบสมัคร
 Route::resource('recruitmentRound', RecruitmentController::class);
+// รายชื่อผู้สมัคร
 Route::resource('tableData', tableDataController::class);
+// ฟอร์มเบื้องต้น
+Route::get('/formprimary/{id}', [formPrimaryController::class, 'show'])->name('form.primary');
+
+// ฟอร์มเพิ่มเติม
+Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])->name('showAdditionalData');
+
+// โหลดไฟล์
+// Route::get('/download-pdf/{id}', 'ApplicantController@downloadPDF')->name('downloadPDF');
+
+// Route::get('download-pdf/{id}', [formPrimaryController::class, 'downloadPDF'])->name('downloadPDF');
+
+
+
+ 
+
+
+Route::get('/', [RecruitmentController::class, 'index'])->name('home');
 
 Route::get('/send', function () {
     return view('email');
@@ -130,6 +161,7 @@ Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 Route::get('/send', function () {
     return view('email');
 });
+
 Route::get('/makeRound', function () {
     return view('makeRound');
 });
