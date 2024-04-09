@@ -52,8 +52,7 @@ class formsController extends Controller
         $validatedFormsData['form_is_employee'] = $isEmployee ? 1 : 0;
         $validatedFormsData['form_is_cooperative'] = $isCooperative ? 1 : 0;
 
-        // Store the roles as a JSON array
-        // $roles = $request->input('roles', []);
+        // Store the roles as a JSON array in database
         $roles = $request->input('roles', []);
         $validatedFormsData['form_ro_id'] = $roles;
 
