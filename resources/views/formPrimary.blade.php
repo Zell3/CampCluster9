@@ -3,56 +3,51 @@
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/showFormPrimary.css') }}">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <div class="show-formPrimary">
         <div class="page d-flex justify-content-evenly align-items-center ">
             <div class="heart ">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                    class="bi bi-heart" viewBox="0 0 16 16">
-                    <path
-                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                </svg>
-                &nbsp;&nbsp;&nbsp;สนใจ
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                  </svg>
             </div>
+            <div class="text-like">สนใจ</div>
             <div class="data ">
                 <label for="name" class="label">ชื่อ-นามสกุล</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">อีเมล</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ตำแหน่ง</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ประเภท</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">เบอร์โทรศัพท์</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
                 <br>
                 <br>
                 <label for="name" class="label">ภาษาโปรแกรมที่ถนัด</label>
                 <br>
 
-                <label for="name">Jemes Smith</label>
+                <label for="name" class="set-data">Jemes Smith</label>
 
             </div>
             <div class="data-add">
@@ -67,7 +62,7 @@
                 <label for="resume" class="label">เรซูเม่</label>
                 <br>
                 <br>
-                <a href="http://">resume.pdf</a>
+                <a href="http://" class="file">resume.pdf</a>
                 <br>
                 <br>
                 <div class="footer">
@@ -96,18 +91,12 @@
                 const heartIcon = document.querySelector('.heart');
 
                 heartIcon.addEventListener('click', () => {
-                    heartIcon.classList.toggle('active');
+                    heartIcon.classList.toggle('active-heart');
                 });
             </script>
 
         </div>
-        <script>
-            const heartIcon = document.querySelector('.heart');
 
-            heartIcon.addEventListener('click', () => {
-                heartIcon.classList.toggle('active');
-            });
-        </script>
 
     </div>
 @endsection
