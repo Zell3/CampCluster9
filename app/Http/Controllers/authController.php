@@ -26,14 +26,14 @@ class authController extends Controller
                 // Authentication succeeded
                 Auth::login($user);
                 // Optionally, you can use Laravel's built-in authentication like Auth::login($user);
-    
+
                 // Redirect authenticated user to the desired route
                 return Redirect::to("/form");
             }
         }
-    
+
         // Authentication failed
-        return back()->withErrors(['hr_email' => 'Invalid credentials']);
+        return back()->withErrors(['email' => 'Invalid credentials']);
     }
     public function logout()
     {

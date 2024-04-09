@@ -31,17 +31,27 @@
 
 .show-formPrimary .page {
 
-    position: fixed;
+    /* position: fixed;
     top: 70px;
-    /* Adjust this value to match the height of the sticky header */
+
     width: 60%;
     height: 60%;
     left: 30%;
     height: calc(100vh - 90px);
-    /* Adjust this value to match the height of the sticky header */
+
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
-    margin-left: 3%;
+    margin-left: 3%; */
+
+    position: fixed;
+    top: 70px;
+    width: 1000px;
+    height: 60%;
+    left: 390px;
+    height: calc(100vh - 90px);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+
 }
 
 .show-formPrimary .sidebar {
@@ -161,4 +171,10 @@
 
 }
 
+.set-data , .file{
+    margin-left: 20px;
+}
 
+.file{
+    padding: 0;
+}
