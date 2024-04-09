@@ -132,3 +132,6 @@ Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-o
 Route::get('/send', function () {
     return view('email');
 });
+Route::get('/makeRound', function () {
+    return view('makeRound');
+});
