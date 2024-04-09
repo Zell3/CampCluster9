@@ -30,8 +30,6 @@
 
 
 .show-formPrimary .page {
-
-
     position: fixed;
     top: 70px;
     width: 1000px;
@@ -154,12 +152,10 @@
     position: absolute;
 }
 
-
 .show-formPrimary .heart.active-heart {
     color: #ff0000;
 
 }
-
 
 .file{
     padding: 0;
