@@ -10,6 +10,7 @@ use App\Models\Email;
 
 class MailController extends Controller
 {
+    
     public function sendOtp(Request $request)
     {
         $mailData = new TestMail($request->email, null);
@@ -27,13 +28,14 @@ class MailController extends Controller
         $emailModel = Email::where('email_name', $email)->where('email_otp', $otp)->first();
 
         if ($emailModel) {
-            // OTP ถูกต้อง ทำการลบ OTP ออกจาก Session
+            $emailModel->delete();
+
             $request->session()->forget('otp');
-            // Redirect ไปหน้าที่ต้องการ
+
             return redirect('/login');
         } else {
             // OTP ไม่ถูกต้อง ให้แสดงข้อความผิดพลาด
-            dd($email);
+            dd('Incorrect OTP, please try again.');
             return view('enter_otp')->with(['otp' => 'Incorrect OTP, please try again.']);
         }
     }
