@@ -54,7 +54,7 @@ class formsController extends Controller
 
         // Store the roles as a JSON array
         // $roles = $request->input('roles', []);
-        $roles = array_map('intval', $request->input('roles', []));
+        $roles = $request->input('roles', []);
         $validatedFormsData['form_ro_id'] = $roles;
 
         // Create a new form record
