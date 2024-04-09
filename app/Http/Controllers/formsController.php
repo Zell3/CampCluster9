@@ -16,7 +16,7 @@ class formsController extends Controller
     public function index()
     {
         // You can pass any necessary data to the form view here
-        return view('createform');
+        return view('makeRound');
     }
 
     // Store a newly created resource in storage
@@ -94,7 +94,7 @@ class formsController extends Controller
             ->generate($link, public_path('qrcodes/' . $filename));
         $qrCodes[] = asset('qrcodes/' . $filename);
 
-        return view('qrCode', compact('qrCodes'));
+        return view('editRound', compact('forms'));
     }
 
      /**

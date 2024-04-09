@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,10 +47,6 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
-    return view('form');
-});
-
 Route::resource("/form",basicFormController::class);
 
 Route::get('/showFormPrimary', function () {
@@ -63,23 +57,13 @@ Route::get('/showFormAddition', function () {
     return view('showFormAddition');
 });
 
-Route::get('/sidebar', function () {
-    return view('dashboard');
-});
-
-Route::get('/form2', function () {
-    return view('form2');
-});
-
 Route::resource("/form2",additionalFormController::class);
 
 Route::get('/edit', function () {
     return view('edit');
 });
 
-Route::resource('/createform', formsController::class);
-
-// Route::post('/createform', [formsController::class, 'store']);
+// Route::resource('/createform', formsController::class);
 Route::get('/send', function () {
     return view('email');
 });
@@ -96,13 +80,23 @@ Route::get("/logout",[authController::class,"logout"]);
 Route::get('/editr/{id}', [formsController::class, 'edit'])->name('editr.edit');
 Route::put("/editr/{id}",[formsController::class, 'update'])->name('editr.update');
 
-Route::get('/round', function () {
-    return view('makeRound');
-});
-
 Route::get('/showQR', function () {
     return view('showQR');
 });
+
+// รอบสมัคร
+Route::resource('recruitmentRound', RecruitmentController::class);
+// รายชื่อผู้สมัคร
+Route::resource('tableData', tableDataController::class);
+
+Route::get('/send', function () {
+    return view('email');
+});
+
+Route::get('/sendmail', [MailController::class,'index']);
+
+Route::get('/sendotp', [MailController::class,'index']);
+
 
 // รอบสมัคร
 Route::resource('recruitmentRound', RecruitmentController::class);
@@ -119,20 +113,6 @@ Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])
 
 // Route::get('download-pdf/{id}', [formPrimaryController::class, 'downloadPDF'])->name('downloadPDF');
 
-
-
- 
-
-
-Route::get('/', [RecruitmentController::class, 'index'])->name('home');
-
-Route::get('/send', function () {
-    return view('email');
-});
-
-Route::get('/sendmail', [MailController::class,'index']);
-
-Route::get('/sendotp', [MailController::class,'index']);
 
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
@@ -162,6 +142,4 @@ Route::get('/send', function () {
     return view('email');
 });
 
-Route::get('/makeRound', function () {
-    return view('makeRound');
-});
+Route::resource('/makeRound', formsController::class);
