@@ -1,5 +1,5 @@
 @extends('dashboard')
-@section('title',"showFromPrimary")
+@section('title',"ฟอร์มเพิ่มเติม")
 @section('content')
 {{-- <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,7 @@
                     <label for="contactRelative" name=""
                         class="setTop head1 ">ข้อมูลบุคคลที่สามารถติดต่อได้เร่งด่วน</label>
                     <br>
-                    <div class="data">
+                    <div class="data setposi">
                         <label for="contactRelative" name="">Lana Steiner</label>
                         <br>
                         <label for="contactRelative" name="">สถานะที่เกี่ยวข้อง : พี่สาว</label>
@@ -54,15 +54,15 @@
                 <div class="content">
                     <label for="nationality" name="" class="head setposition">สัญชาติ</label>
                     <br>
-                    <label for="nationality" name="" class="data setposition2">ไทย</label>
+                    <label for="nationality" name="" class="data1 setposition2">ไทย</label>
                 </div>
             </div>
 
             <div class="item">
-                <div class="content">
-                    <label for="companies" name="" class="head">บริษัทที่เคยทำงาน</label>
+                <div class="content setposition-com">
+                    <label for="companies" name="" class="head ">บริษัทที่เคยทำงาน</label>
                     <br>
-                    <label for="companies" name="" class="data">Clicknext Bangkok</label>
+                    <label for="companies" name="" class="data setposi">Clicknext Bangkok</label>
                 </div>
             </div>
 
@@ -75,10 +75,10 @@
             </div>
 
             <div class="item">
-                <div class="content">
+                <div class="content set-reward">
                     <label for="reward" name="" class="reward head">รางวัลที่ได้รับ</label>
                     <br>
-                    <label for="reward" name=""class="reward data">เรียนจบเกียรตินิยมอันดับ 1
+                    <label for="reward" name=""class="reward data2">เรียนจบเกียรตินิยมอันดับ 1
                         จากมหาวิทยาลัยบูรพา คณะวิทยาการสารสนเทศ</label>
                 </div>
             </div>
@@ -92,11 +92,11 @@
             </div>
 
             <div class="item">
-                <div class="content">
+                <div class="content setposition-cer">
                     <label for="certificate" name="" class="head">ใบรับรอง</label>
                     <br>
                     <a href="#">
-                        <label for="file" class="data">resume.pdf</label>
+                        <label for="file" class="data setposi">resume.pdf</label>
                         {{-- <button class="data">resume.pdf</button> --}}
                     </a>
                 </div>
@@ -122,16 +122,17 @@
             </div>
 
             <div class="arrow footer">
-                <button type="button" id="btn-back">
+                <a href="#"><button type="button" id="btn-back">
                     <svg class="go" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-                      </svg>                </button>
+                      </svg>
+                    </button></a>
                 &nbsp;
-                <button type="button" id="btn-forward">
+                <a href="#"><button type="button" id="btn-forward">
                     <svg class="back" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                       </svg>
-                </button>
+                </button></a>
             </div>
 
         </div>

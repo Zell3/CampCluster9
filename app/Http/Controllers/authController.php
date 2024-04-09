@@ -6,6 +6,7 @@ use App\Models\Hr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 
 
 class authController extends Controller
@@ -17,23 +18,22 @@ class authController extends Controller
 
     public function login_auth(Request $request)
     {
-        // Retrieve the user by the email address
-        $user = Hr::where('hr_email', $request->email)->first();
-
-        // Check if the user exists
+        $user = Hr::where('email', $request->email)->first();
+        echo("there is something");
         if ($user) {
-            // Compare the input password with the password in the database
-            if ($request->password == $user->hr_password) { // Note: No hashing is done here
-                // Authenticate the user
+            // Compare the input password with the hashed password in the database
+            if (Hash::check($request->password, $user->password)) {
+                // Authentication succeeded
                 Auth::login($user);
+                // Optionally, you can use Laravel's built-in authentication like Auth::login($user);
 
-                // Redirect authenticated user to dashboard or any desired route
+                // Redirect authenticated user to the desired route
                 return Redirect::to("/form");
             }
         }
 
         // Authentication failed
-        return back()->withErrors(['hr_email' => 'Invalid credentials']);
+        return back()->withErrors(['email' => 'Invalid credentials']);
     }
     public function logout()
     {

@@ -26,8 +26,8 @@ class Hr extends Authenticatable
      */
     protected $fillable = [
         'hr_username',
-        'hr_email',
-        'hr_password',
+        'email',
+        'password',
     ];
 
     /**
@@ -36,7 +36,7 @@ class Hr extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'hr_password',
+        'password',
         'remember_token',
     ];
 

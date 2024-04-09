@@ -127,11 +127,14 @@ class formsController extends Controller
         return view('qrCode', compact('qrCodes'));
     }
 
+     /**
+     * Display the specified resource.
+     */
     public function show(String $id)
     {
 
         $forms = Forms::findOrFail($id);
-        return view('edit_round', compact('forms'));
+        return view('editRound', compact('forms'));
     }
 
     /**
@@ -140,7 +143,7 @@ class formsController extends Controller
     public function edit(String $id)
     {
         $forms = Forms::findOrFail($id);
-        return view('edit_round', compact('forms'));
+        return view('editRound', compact('forms'));
 
 
         if($forms === null){
@@ -172,6 +175,7 @@ class formsController extends Controller
 
         // Update other fields as needed
         $forms->save();
+
         return redirect()->back()->with('success', 'Form updated successfully.');
     }
 }

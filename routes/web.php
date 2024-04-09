@@ -29,9 +29,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
 
-Route::get("/",function(){
-    return redirect("/login");
-});
+// Route::get("/",function(){
+//     return redirect("/login");
+// });
 
 Route::get('/otp',function(){
     return view('otp');
@@ -41,7 +41,7 @@ Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::post('/form', function () {
+Route::get('/form', function () {
     return view('form');
 });
 
@@ -77,7 +77,7 @@ Route::get('/sendotp', [MailController::class,'index']);
 
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login",[authController::class,"login_auth"]);
+Route::post("/login-check",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
 
 // Edit Forms Routes
@@ -113,8 +113,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/verify-accout', [App\Http\Controllers\HomeController::class, 'verification'])->name('verifyAccount');
 Route::post('/verifyotp', [App\Http\Controllers\HomeController::class, 'useractivation'])->name('verifyotp');
 
-
-
 Route::post('/send-otp', [MailController::class, 'sendOtp'])->name('send-otp');
 
 Route::post('/check-otp', [OTPController::class, 'checkOTP'])->name('send');
@@ -126,7 +124,6 @@ Route::get('/enter-email', function () {
 Route::get('/enter-otp', function () {
     return view('enter_otp');
 });
-
 
 Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
