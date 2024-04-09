@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,7 +105,7 @@ Route::get('/sendotp', [MailController::class,'index']);
 
 
 Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login",[authController::class,"login_auth"]);
+Route::post("/login-check",[authController::class,"login_auth"]);
 Route::get("/logout",[authController::class,"logout"]);
 Auth::routes();
 
@@ -127,7 +128,7 @@ Route::get('/enter-otp', function () {
 });
 
 
-Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-otp');
+Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
 Route::get('/send', function () {
     return view('email');
