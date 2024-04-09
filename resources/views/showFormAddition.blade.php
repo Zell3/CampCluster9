@@ -31,7 +31,7 @@
                 <div class="content">
                     <label for="birthDate" name="birtDate" class="setTop head">วัน เดือน ปีเกิด</label>
                     <br>
-                    <label for="birthDate" name="birtDate" class="data">{{ $additionalData->adu_birth }} </label>
+                    <label for="birthDate" name="birtDate" class="data">{{ $additionalData->adu_birthday }} </label>
                 </div>
             </div>
 
