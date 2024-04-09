@@ -48,18 +48,18 @@
             </div>
             <ol class="container-card">
                 <!-- ลูปเอาข้อมูลออกมาโชว์ -->
-                <?php foreach ($recruitments as $index => $recruitment) : ?>
-                    <a href="/tableData?form_id=<?php echo $recruitment->form_id; ?>">
+                <?php foreach ($recruitments as $index => $recruitment) : ?>                    
                         <div class="card">
-                            <label>เรื่อง: <?php echo $recruitment->form_title; ?></label>
+                        <a href="/tableData?form_id=<?php echo $recruitment->form_id; ?>"> 
+                            <label>เรื่อง: <?php echo $recruitment->form_title; ?></label> 
                             <br>
                             <h1><?php echo $recruitment->form_location; ?><a style="display:inline;" href=""><i class="fas fa-pen"></i></a></h1>
                             <br>
                             <label>วันเริ่มต้น: <?php echo $recruitment->form_created_at; ?><a style="display:inline;" href=""><i class="fas fa-qrcode"></i></a></label>
                             <br>
                             <label>วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label>
-                        </div>                       
-                    </a>
+                        </a>
+                        </div>                                           
                 <?php endforeach; ?>
             </ol>
         </div>
