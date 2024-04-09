@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\formsController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\formAdditionController;
+use App\Http\Controllers\formPrimaryController;
 use App\Http\Controllers\MailController;
 use App\Models\Hr;
 use Illuminate\Http\Request;
@@ -91,8 +93,22 @@ Route::get('/showQR', function () {
     return view('showQR');
 });
 
+// รอบสมัคร
 Route::resource('recruitmentRound', RecruitmentController::class);
+// รายชื่อผู้สมัคร
 Route::resource('tableData', tableDataController::class);
+// ฟอร์มเบื้องต้น
+Route::get('/formprimary/{id}', [formPrimaryController::class, 'show'])->name('form.primary');
+
+// ฟอร์มเพิ่มเติม
+Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])->name('showAdditionalData');
+
+// โหลดไฟล์
+// Route::get('/download-pdf/{id}', 'ApplicantController@downloadPDF')->name('downloadPDF');
+
+
+
+
 
 Route::get('/send', function () {
     return view('email');
@@ -132,3 +148,4 @@ Route::post('/verify-otp', [MailController::class, 'verifyOTP'])->name('verify-o
 Route::get('/send', function () {
     return view('email');
 });
+
