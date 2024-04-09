@@ -35,6 +35,7 @@ body {
     height: 45px;
     /* z-index: -1; */
     background-color: transparent !important;
+    position: sticky;
 }
 
 /* .profile {
