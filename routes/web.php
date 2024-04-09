@@ -144,6 +144,7 @@ Route::get('/enter-otp', function () {
     return view('enter_otp');
 });
 
+
 Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
 Route::get('/send', function () {
