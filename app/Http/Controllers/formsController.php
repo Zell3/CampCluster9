@@ -61,22 +61,36 @@ class formsController extends Controller
 
         // Generate QR codes for selected roles
         $qrCodes = [];
-        // 1 QR per 1 roles
+
+        // URL ของโลโก้ QR
+        $logoUrl = 'https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZumRE9fBg7HKluIPhTqbb3q3-gmEdPvUhtM52MbB6JUFPqh8CauplV7cBMkQIci41IF2XLNuW_8Oo4QW5Fi_bqMLKHnftRLA=w1910-h885';
+
         foreach ($roles as $role) {
             // Check if the checkbox is checked
             if (in_array($role, $request->roles)) {
                 $link = "http://10.80.6.165/cluster9/$forms->form_token/$role";
-                $filename = "qr_code_$forms->form_token + _$role.png"; // Unique filename for each QR code
-                QrCode::format('png')->merge('qrcodes/logo.png', 0.3, true)->errorCorrection('H')
-                ->size(200)->generate($link, public_path('qrcodes/' . $filename));
+                $filename = "qr_code_$forms->form_token" . "_$role.png"; // Unique filename for each QR code
+                $logoContent = file_get_contents($logoUrl); // ดึงรูปภาพโลโก้จาก URL
+
+                QrCode::format('png')
+                    ->mergeString($logoContent, 0.3, true) // ใช้โลโก้จาก URL และใส่ลงใน QR code
+                    ->errorCorrection('H')
+                    ->size(200)
+                    ->generate($link, public_path('qrcodes/' . $filename));
                 $qrCodes[] = asset('qrcodes/' . $filename);
             }
         }
+
         // 1 QR for all roles
         $link = "http://10.80.6.165/cluster9/$forms->form_token";
-        $filename = "qr_code_$forms->form_token + _all.png"; // Unique filename for each QR code
-        QrCode::format('png')->merge('qrcodes/logo.png', 0.3, true)->errorCorrection('H')
-        ->size(200)->generate($link, public_path('qrcodes/' . $filename));
+        $filename = "qr_code_$forms->form_token" . "_all.png"; // Unique filename for each QR code
+        $logoContent = file_get_contents($logoUrl); // ดึงรูปภาพโลโก้จาก URL
+
+        QrCode::format('png')
+            ->mergeString($logoContent, 0.3, true) // ใช้โลโก้จาก URL และใส่ลงใน QR code
+            ->errorCorrection('H')
+            ->size(200)
+            ->generate($link, public_path('qrcodes/' . $filename));
         $qrCodes[] = asset('qrcodes/' . $filename);
 
         return view('qrCode', compact('qrCodes'));
@@ -103,7 +117,6 @@ class formsController extends Controller
             // If the form exists, return the edit view with the form data
             return view("editRound", compact("forms"));
         }
-
     }
 
     // Update the specified resource in storage
@@ -119,11 +132,11 @@ class formsController extends Controller
         // $forms = Forms::findOrFail($id);
         $forms = Forms::where('form_token', $id)->first();
 
-        $forms -> form_title = $title;
-        $forms -> form_location = $location;
-        $forms -> form_created_at = $start_date;
-        $forms -> form_expired_at = $end_date;
-        $forms -> form_comment = $comment;
+        $forms->form_title = $title;
+        $forms->form_location = $location;
+        $forms->form_created_at = $start_date;
+        $forms->form_expired_at = $end_date;
+        $forms->form_comment = $comment;
 
         // Update other fields as needed
         $forms->save();
