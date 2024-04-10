@@ -28,7 +28,7 @@
                         <span class="padding-bottom--15">Login</span>
 
                         <!-- Start of login form -->
-                        <form action="/login-check" method="POST">
+                        <form action="{{ url('login-check') }}" method="POST">
                             <!-- CSRF protection -->
                             @csrf
                             <!-- Email input field -->

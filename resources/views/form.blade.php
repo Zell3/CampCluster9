@@ -8,7 +8,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
+    <form action="{{ url('form') }}" method="POST" class="form" enctype="multipart/form-data">
         @csrf
         <div class="container-form">
             <label for="inputName" class="header">ชื่อ</label>
@@ -31,7 +31,7 @@
             <label for="inputEmail" class="header">อีเมล</label>
             <br>
             <input type="text" name="email" required placeholder="กรอกอีเมล" class="inputText">
-        </div>    
+        </div>
         <div class="container-form">
             <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
