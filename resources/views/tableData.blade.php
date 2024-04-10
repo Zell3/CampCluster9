@@ -37,40 +37,7 @@
     {{-- sidebar for test --}}
     {{-- <div class="sidebar">test</div> --}}
 
-    <div class="tools-flex-box">
-        {{-- email button --}}
-        <div class="item">
-            <div class="btn-email">
 
-                <a href="#"><button class="btn-email-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                        </svg></button></a>
-            </div>
-        </div>
-
-        {{-- search bar --}}
-        <div class="item">
-            <div class="searchBar">
-                <input type="text" id="searchInput" placeholder="Search" class="inputSearch" style="margin-right: 10px;">
-                <button onclick="search()" class="btn-search-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg></button>
-            </div>
-        </div>
-
-        {{-- filter button --}}
-        <div class="item">
-            {{-- filter button --}}
-            {{-- set path to filter page here --}}
-            <div>
-                <a href="#"><button class="btn-filter-bg" id="filterBtn"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                    </button>
-                </a>
-            </div>
-        </div>
-    </div>
     {{-- </form> --}}
 
     {{-- filter action --}}
@@ -145,7 +112,43 @@
     </div>
 
     {{-- table --}}
-    <div class="table-responsive">
+
+    <div class="tablerecruitlist">
+        <div class="tools-flex-box">
+            {{-- email button --}}
+            <div class="item">
+                <div class="btn-email">
+
+                    <a href="#"><button class="btn-email-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg></button></a>
+                </div>
+            </div>
+
+            {{-- search bar --}}
+            <div class="item">
+                <div class="searchBar">
+                    <input type="text" id="searchInput" placeholder="Search" class="inputSearch" style="margin-right: 10px;">
+                    <button onclick="search()" class="btn-search-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg></button>
+                </div>
+            </div>
+
+            {{-- filter button --}}
+            <div class="item">
+                {{-- filter button --}}
+                {{-- set path to filter page here --}}
+                <div>
+                    <a href="#"><button class="btn-filter-bg" id="filterBtn"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br><br>
         <table class="table table-striped table-sm">
             <thead >
                 <tr>

@@ -43,10 +43,11 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <div class="logo">
+                                <a class="has-arrow" href="{{ url('recruitmentRound') }}" aria-expanded="true">
                                 <img src="https://blog.clicknext.com/wp-content/themes/clicknext_blog2/assets/images/clicknext-logo.png"
                                     alt="">
+                                </a>
                             </div>
-                            <a class="has-arrow" href="#" aria-expanded="true"></a>
                             <br>
                             <li class="nav-item ">
                                 <a class="nav-link active" href="{{ url('recruitmentRound') }}" aria-expanded="true">
