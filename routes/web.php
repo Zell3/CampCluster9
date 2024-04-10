@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,12 +116,8 @@ Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])
 // โหลดไฟล์
 // Route::get('/download-pdf/{id}', 'ApplicantController@downloadPDF')->name('downloadPDF');
 
+
 // Route::get('download-pdf/{id}', [formPrimaryController::class, 'downloadPDF'])->name('downloadPDF');
-
-
-
- 
-
 
 Route::get('/', [RecruitmentController::class, 'index'])->name('home');
 
