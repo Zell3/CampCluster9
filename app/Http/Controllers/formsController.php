@@ -68,7 +68,7 @@ class formsController extends Controller
         foreach ($roles as $role) {
             // Check if the checkbox is checked
             if (in_array($role, $request->roles)) {
-                $link = "http://10.80.6.165/cluster9/$forms->form_token/$role";
+                $link = "http://10.80.6.165/cluster9/form/$forms->form_token/$role";
                 $filename = "qr_code_$forms->form_token" . "_$role.png"; // Unique filename for each QR code
                 $logoContent = file_get_contents($logoUrl); // ดึงรูปภาพโลโก้จาก URL
 
@@ -81,7 +81,7 @@ class formsController extends Controller
         }
 
         // 1 QR for all roles
-        $link = "http://10.80.6.165/cluster9/$forms->form_token";
+        $link = "http://10.80.6.165/cluster9/form/$forms->form_token/all";
         $filename = "qr_code_$forms->form_token" . "_all.png"; // Unique filename for each QR code
         $logoContent = file_get_contents($logoUrl); // ดึงรูปภาพโลโก้จาก URL
 

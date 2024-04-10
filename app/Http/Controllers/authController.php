@@ -28,7 +28,7 @@ class authController extends Controller
                 // Optionally, you can use Laravel's built-in authentication like Auth::login($user);
 
                 // Redirect authenticated user to the desired route
-                return Redirect::to("/form");
+                return Redirect::to("/recruitmentRound");
             }
         }
 
