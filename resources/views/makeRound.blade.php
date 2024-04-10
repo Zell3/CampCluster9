@@ -60,11 +60,6 @@
                         @foreach ($qrCodes as $qrCode)
                         <img src="{{ $qrCode }}" alt="QR Code"><br>
                         @endforeach
-                        <script>
-                            document.getElementById('roundForm').addEventListener('submit', function(event) {
-                                event.preventDefault(); // Prevent form submission
-                            });
-                        </script>
                     @endif
                 </div>
             </div>
@@ -130,6 +125,7 @@
                     <div>
                         <button class ="submit" type = "submit">บันทึก</button>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -143,7 +139,7 @@
                     @if(!empty($forms))
                         @php
                         $form_token = $forms->form_token;
-                        $qrCodes = Forms::where('form_token', $id)->first();
+                        $qrCodes = DB::table('forms')->where('form_token', $form_token)->first();
                         $selectedRoles = $forms->form_ro_id;
                         @endphp
                     @foreach($selectedRoles as $roleId)
@@ -192,6 +188,5 @@
         </div>
     </div>
     </div>
-
 
 @endsection

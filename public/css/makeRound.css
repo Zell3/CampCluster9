@@ -72,6 +72,7 @@
     max-width: 500px;
     font-size: 15px;
     height: 100px;
+    resize: none;
 }
 
 .flexbox-make-round img{
