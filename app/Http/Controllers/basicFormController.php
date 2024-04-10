@@ -54,13 +54,13 @@ class basicFormController extends Controller
         $email = $request->input("email");
         $employee_or_not = $request->input("employee");
         $cooperative_or_not = $request->input("cooperative");
-        $role_name = $request->input("role_name");
+        $role_id = $request->input("role_id");
         $programlanguage = $request->input("programlanguage");
         $addinformation = $request->input("addinformation");
 
         // Initialize $base64Image with a default or empty value
         $base64Image = '';
-      
+
         // Check if the image is uploaded and process it
         if ($request->hasFile('image')) {
             $image = $request->file('image')->getRealPath();
@@ -74,7 +74,7 @@ class basicFormController extends Controller
         $language = $request->input("language");
         $expertskills = $request->input("expertSkills");
 
-        $role_id = roleModel::where('ro_name', $role_name)->value('ro_id');
+        // $role_id = roleModel::where('ro_name', $role_name)->value('ro_id');
         $currentTime = Carbon::now();
 
         $basicFormModel = new basicFormModel();
@@ -103,7 +103,8 @@ class basicFormController extends Controller
 
         $basicFormModel->save();
 
-        return redirect("/tableData?form_token=$token");
+        echo "กรอกข้อมูลสำเร็จ";
+        // return redirect("/tableData?form_token=$token");
     }
 
     public function edit(string $id)

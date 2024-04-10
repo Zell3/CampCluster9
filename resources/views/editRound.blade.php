@@ -7,7 +7,7 @@
     <div class="flexbox-make-round">
         <div class="item">
             <div class="content">
-                <form method="POST" action="{{ url('editr/{{ $forms->form_token }}') }}">
+                <form method="POST" action="{{ url('editr/' . $forms->form_token) }}">
                     @csrf
                     @method('PUT')
                     <div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="row">
                             <div class="col-6"> <button class ="submit" type = "submit">บันทึก</button></div>
-                            <div class="col-6"><a href="/recruitmentRound"><button class ="cancel"
+                            <div class="col-6"><a href="{{url('/recruitmentRound')}}"><button class ="cancel"
                                         type = "button">ยกเลิก</button></a>
                             </div>
                         </div>

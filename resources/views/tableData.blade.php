@@ -144,9 +144,9 @@
             </form>
         </div>
         </div>
-
+        
         {{-- table --}}
-        <div class="table-responsive">
+    <div class="tablerecruitlist">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
@@ -163,6 +163,7 @@
                 </thead>
                 <tbody class="show-data">
                     <?php foreach ($applicants as $index => $applicant) : ?>
+                    
                     <tr class="searchable">
                         <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-pin-angle" viewBox="0 0 16 16">
@@ -300,5 +301,4 @@
             }
         </script>
     </body>
-
     </html>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
+    <form action="{{ url('/form') }}" method="POST" class="form" enctype="multipart/form-data">
         @csrf
         <div class="container-form">
             <input type="hidden" id="form_token" name="form_token" value="{{ $forms->form_token }}">
@@ -54,22 +54,22 @@
         <div class="container-form">
             <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
-            <select name="role_name" class="inputText">
+            <select name="role_id" class="inputText">
                 <?php if($id == "1"){?>
-                    <option value="System Analysis" name = "role_name">System Analysis</option>
+                    <option value="1" name = "role_id">System Analysis</option>
                 <?php }else if($id == "2"){ ?>
-                    <option value="Tester" name = "role_name">Tester</option>
+                    <option value="2" name = "role_id">Tester</option>
                 <?php }else if($id == "3"){?>
-                    <option value="Programmer" name = "role_name">Programmer</option>
+                    <option value="3" name = "role_id">Programmer</option>
                 <?php }else if($id == "4"){ ?>
-                    <option value="Business Analyst" name = "role_name">Business Analyst</option>
+                    <option value="4" name = "role_id">Business Analyst</option>
                 <?php }else if($id == "all"){ ?>
-                    <option value="System Analysis" name = "role_name">System Analysis</option>
-                    <option value="Tester" name = "role_name">Tester</option>
-                    <option value="Programmer" name = "role_name">Programmer</option>
-                    <option value="Business Analyst" name = "role_name">Business Analyst</option>
+                    <option value="1" name = "role_id">System Analysis</option>
+                    <option value="2" name = "role_id">Tester</option>
+                    <option value="3" name = "role_id">Programmer</option>
+                    <option value="4" name = "role_id">Business Analyst</option>
                 <?php } ?>
-                
+
             </select>
         </div>
         <div class="container-form">
