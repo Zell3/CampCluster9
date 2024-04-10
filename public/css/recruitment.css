@@ -20,6 +20,11 @@
 
 }
 
+#date_S, #date_E{
+    font-size: 12px !important;
+
+}
+
 
 .flexbox-wrapper .card {
     display: block;
@@ -36,8 +41,8 @@
 
 
 
-.flexbox-wrapper label h1 a i {
-    font-size: 20px;
+.flexbox-wrapper h1 a i {
+    font-size: 12px;
     right: -100px;
 
 }
@@ -45,12 +50,6 @@
  .flexbox-wrapper a {
     color: rgb(85, 83, 83);
     font-size: 14px;
-}
-
-
-.flexbox-wrapper .card h1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .size-content-date{
