@@ -118,3 +118,8 @@
     font-weight: bold;
     font-size: x-large;
 }
+
+.btnDownload{
+    background: transparent;
+    border: transparent;
+}
