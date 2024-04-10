@@ -54,10 +54,10 @@
             <textarea name="additional-info" id="additional-info" cols="30" rows="10">{{ $basicData->bdu_additional_data }}</textarea>
             <br>
             <br>
+            <!-- เรซูเม่ -->
             <label for="resume" class="label">เรซูเม่</label>
             <br>
-
-            <br>
+            <a href="{{ route('resume.show', [$basicData->bdu_id]) }}" download="resume.pdf">ดาวน์โหลดเรซูเม่</a>
             <br <div class="footer">
             <button type="submit" id="sent">ส่งอีเมล</button>
         </div>

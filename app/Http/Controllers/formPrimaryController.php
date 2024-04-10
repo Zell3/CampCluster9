@@ -32,4 +32,18 @@ class formPrimaryController extends Controller
     //         ->header('Content-Type', 'application/pdf')
     //         ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
     // }
+    
+    public function showResume($id){
+        $basicData = tableDataModel::findOrFail($id);
+        $resumeData = $basicData->bdu_resume_name;
+        $mimeType = 'application/pdf';
+    
+        // Change 'inline' to 'attachment' to force the download of the file
+        return response()->make($resumeData, 200, [
+            'Content-Type' => $mimeType,
+            'Content-Disposition' => 'attachment; filename="resume.pdf"'
+        ]);
+    }
+    
+    
 }
