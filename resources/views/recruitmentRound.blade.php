@@ -25,7 +25,8 @@
                     <div class="row">
                         <div class="col-9"><label id="date_S">วันเริ่มต้น: <?php echo $recruitment->form_created_at; ?><a style="display:inline;"
                                     href=""><i class="fas fa-qrcode"></i></a></label></div>
-                        <div class="col-3" ><a style="display:inline;" href="{{ url('editr/{{$recruitment->form_token}}') }}"><i class="fas fa-qrcode">
+                        <div class="col-3" >
+                            <form action="{{ url('form') }}" method="POST" class="form" enctype="multipart/form-data"><i class="fas fa-qrcode">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
 
