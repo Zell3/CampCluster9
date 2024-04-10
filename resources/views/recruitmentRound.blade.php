@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-9"><label id="date_S">วันเริ่มต้น: <?php echo $recruitment->form_created_at; ?><a style="display:inline;"
                                     href=""><i class="fas fa-qrcode"></i></a></label></div>
-                        <div class="col-3" ><a style="display:inline;" href=""><i class="fas fa-qrcode">
+                        <div class="col-3" ><a style="display:inline;" href="/editr/{{$recruitment->form_token}}"><i class="fas fa-qrcode">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                                         <path
@@ -34,7 +34,7 @@
                     </div>
                     <div class="row">
                         <div class="col-9"><label id="date_E" >วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label></div>
-                        <div class="col-3"><a style="display:inline;" href=""><i class="fas fa-qrcode">
+                        <div class="col-3"><a style="display:inline;" href="#"><i class="fas fa-qrcode">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
                                         <path d="M2 2h2v2H2z" />
@@ -60,7 +60,7 @@
                         <label>วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label>
                     </div> --}}
                 <?php endforeach; ?>
-                
+
             </div>
         </div>
     </div>
