@@ -43,6 +43,7 @@ Route::get('/otp',function(){
 
 // Route with different route parameters
 Route::get("/form/{token}/{id}", [basicFormController::class, 'show']);
+Route::post("/form", [basicFormController::class, 'store']);
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');

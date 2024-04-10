@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <form action="{{ url('form') }}" method="POST" class="form" enctype="multipart/form-data">
+    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
+        @csrf
         <div class="container-form">
             <input type="hidden" id="form_token" name="form_token" value="{{ $forms->form_token }}">
         </div>
@@ -35,6 +36,20 @@
             <label for="inputEmail" class="header">อีเมล</label>
             <br>
             <input type="text" name="email" required placeholder="กรอกอีเมล" class="inputText">
+        </div>
+        <div class="container-form">
+            <label for="" class="header">ประเภทผู้สมัคร</label>
+            <br>
+            <select name="role_name" class="inputText">
+                <?php if($forms->form_is_employee == 1 && $forms->form_is_cooperative == 1){ ?>
+                    <option value="employee" name = "employee">พนักงานทั่วไป</option>
+                    <option value="cooperative" name = "cooperative">สหกิจศึกษา</option>
+                <?php }else if($forms->form_is_employee == 1){ ?>
+                    <option value="employee" name = "employee">พนักงานทั่วไป</option>
+                <?php }else {?>
+                    <option value="cooperative" name = "cooperative">สหกิจศึกษา</option>
+                <?php } ?>
+            </select>
         </div>
         <div class="container-form">
             <label for="inputWorking" class="header">ตำแหน่ง</label>
