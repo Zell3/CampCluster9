@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -7,7 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class sendmail extends Mailable
+class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,9 +22,8 @@ class sendmail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.sendmail')
-                    ->subject('Your Subject')
+        return $this->view('emails.sendMail')
+                    ->subject('Your subject here')
                     ->with(['mailData' => $this->mailData]);
     }
 }
-

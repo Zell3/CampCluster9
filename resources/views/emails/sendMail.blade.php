@@ -6,7 +6,7 @@
     <title>SendMail</title>
 </head>
 <body>
-    <h1>Your OTP is: {{ $otp }}</h1>
-    <p>Thank you for register.</p>
+    <h1>Your link for...</h1>
+    <p>Thank you.</p>
 </body>
 </html>

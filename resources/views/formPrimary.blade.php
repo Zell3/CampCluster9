@@ -56,10 +56,24 @@
             <br>
             <label for="resume" class="label">เรซูเม่</label>
             <br>
-            
+
             <br>
             <br <div class="footer">
-            <button type="submit" id="sent">ส่งอีเมล</button>
+            <div>
+                <form action="{{ route('sendMessage') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="email" value="{{ $basicData->bdu_email }}">
+                    <button type="submit" id="sent">ส่งอีเมล</button>
+                </form>
+            </div>
+            <br>
+            <div>
+                <form action="{{ route('send-otp') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="email" value="{{ $basicData->bdu_email }}">
+                    <button type="submit" id="sent">ส่งOTP</button>
+                </form>
+            </div>
         </div>
         <div class="arrow footer">
             <button type="button" id="btn-back">

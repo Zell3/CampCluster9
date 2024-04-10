@@ -48,6 +48,10 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('/testotp', function () {
+    return view('testotp');
+});
+
 Route::resource("/form",basicFormController::class);
 
 Route::get('/showFormPrimary', function () {
@@ -146,7 +150,7 @@ Route::get('/enter-email', function () {
 Route::get('/enter-otp', function () {
     return view('enter_otp');
 });
-
+Route::post('/send-email', [MailController::class, 'sendMessage'])->name('sendMessage');
 
 Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
