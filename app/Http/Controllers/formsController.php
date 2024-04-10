@@ -78,7 +78,6 @@ class formsController extends Controller
                     ->errorCorrection('H')
                     ->size(200)
                     ->generate($link, public_path('qrcodes/' . $filename));
-                $qrCodes[] = asset('qrcodes/' . $filename);
             }
         }
 
@@ -92,9 +91,8 @@ class formsController extends Controller
             ->errorCorrection('H')
             ->size(200)
             ->generate($link, public_path('qrcodes/' . $filename));
-        $qrCodes[] = asset('qrcodes/' . $filename);
 
-        return view('editRound', compact('forms'));
+        return view('makeRound', compact('forms'));
     }
 
      /**
