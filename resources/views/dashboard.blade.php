@@ -49,7 +49,7 @@
                             <a class="has-arrow" href="#" aria-expanded="true"></a>
                             <br>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" aria-expanded="true">
+                                <a class="nav-link active" href="{{ url('recruitmentRound') }}" aria-expanded="true">
                                     <div class="user-icon">
 
                                         <img src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png" alt="">
@@ -60,7 +60,7 @@
                             <br>
 
                             <li class="nav-item">
-                                <a class="nav-link " href="#"aria-expanded="true">
+                                <a class="nav-link " href="{{ url('makeRound') }}" aria-expanded="true">
                                     <div class="qr-icon">
                                         <img src="https://cdn-icons-png.flaticon.com/128/747/747470.png" alt="">
                                     </div>
@@ -68,15 +68,6 @@
                                 </a>
                             </li>
                             <br>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"aria-expanded="true">
-                                    <div class="graph-icon">
-                                        <img src="https://cdn-icons-png.flaticon.com/128/404/404723.png" alt="">
-                                    </div>
-                                    &nbsp;&nbsp;&nbsp;สถิติ
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </nav>
