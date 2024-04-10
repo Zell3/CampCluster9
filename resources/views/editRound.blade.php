@@ -64,7 +64,7 @@
                         </div>
                         <div class="row">
                             <div class="col-6"> <button class ="submit" type = "submit">บันทึก</button></div>
-                            <div class="col-6"><a href="/recruitmentRound"><button class ="cancel"
+                            <div class="col-6"><a href="{{url('/recruitmentRound')}}"><button class ="cancel"
                                         type = "button">ยกเลิก</button></a>
                             </div>
                         </div>
