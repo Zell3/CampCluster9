@@ -4,23 +4,21 @@
 
     <link rel="stylesheet" href="{{ asset('css/makeRound.css') }}">
     <div class="scrollcontentlock">
-        <div class="flexbox-make-round">
-            <div class="item">
-                <div class="content">
-                    <form method="POST" action="/editr/{{ $forms->form_token }}">
-                        @csrf
-                        @method('PUT')
-                        <div>
-                            <label for="title">ชื่อเรื่อง</label>
-                            <input class="ti" type="text" name="title" value="{{ $forms->form_title }}"
-                                required><br>
-                        </div>
-                        <div>
-                            <label for="location">สถานที่</label>
-                            <input class="lo" type="text" name="location" value="{{ $forms->form_location }}"
-                                required><br><br>
-                        </div>
-
+    <div class="flexbox-make-round">
+        <div class="item">
+            <div class="content">
+                <form method="POST" action="{{ url('editr/{{ $forms->form_token }}') }}">
+                    @csrf
+                    @method('PUT')
+                    <div>
+                        <label for="title">ชื่อเรื่อง</label>
+                        <input class="ti" type="text" name="title" value="{{ $forms->form_title }}" required><br>
+                    </div>
+                    <div>
+                        <label for="location">สถานที่</label>
+                        <input class="lo" type="text" name="location" value="{{ $forms->form_location }}"
+                            required><br><br>
+                    </div>
                         <div>
                             <label for="position">ตำแหน่ง</label><br>
                             @php

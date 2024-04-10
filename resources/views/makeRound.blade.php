@@ -79,7 +79,7 @@
     <div class="flexbox-make-round">
         <div class="item">
             <div class="content">
-                <form id="makeRound" method="POST" action="/makeRound">
+                <form id="makeRound" method="POST" action="{{ url('makeRound') }}">
                     @csrf
                     <input type="hidden" name="form_hr_id" value="1">
                     <div class="form-group">

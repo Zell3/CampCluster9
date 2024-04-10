@@ -10,7 +10,7 @@
                         </div>
                     @endif
 
-        <form action = "{{route(verifyotp)}}" method = "POST">
+        <form action = "{{url(verifyotp)}}" method = "POST">
             @csrf
             <div class = "form-group">
                 <label for ="">Enter OTP</label>

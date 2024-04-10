@@ -8,8 +8,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
-        @csrf'
+    <form action="{{ url('form') }}" method="POST" class="form" enctype="multipart/form-data">
         <div class="container-form">
             <input type="hidden" id="form_token" name="form_token" value="{{ $forms->form_token }}"
         </div>
@@ -34,7 +33,7 @@
             <label for="inputEmail" class="header">อีเมล</label>
             <br>
             <input type="text" name="email" required placeholder="กรอกอีเมล" class="inputText">
-        </div>    
+        </div>
         <div class="container-form">
             <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
