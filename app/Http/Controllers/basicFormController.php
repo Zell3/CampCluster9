@@ -16,8 +16,16 @@ class basicFormController extends Controller
     }
     public function show(string $token, string $id)
     {
+        $roles_table = RoleModel::all();
+        $roles_id = [];
+        $roles_name = [];
+        foreach ($roles_table as $role) {
+            $roles_id[] = $role->ro_id;
+            $roles_name[] = $role->ro_name;
+        }
         // Find the form by form_token
         $forms = Forms::where('form_token', $token)->first(); // Use first() to execute the query and get a single resultp
+        $roles_table = roleModel::all();
         if ($forms === null) {
             // If the form doesn't exist, redirect back to the forms page
             return view("error");
@@ -26,11 +34,11 @@ class basicFormController extends Controller
         $roles = $forms->form_ro_id;
         foreach ($roles as $role) {
             if($role == $id) {
-                return view("form", compact("forms"));
+                return view("form", compact("forms", "id"));
             }
         }
         if ($id == "all") {
-            return view("form", compact("forms"));
+            return view("form", compact("forms", "id","roles_id","roles_name"));
         }
 
         return view("error");
@@ -38,6 +46,7 @@ class basicFormController extends Controller
 
     public function store(Request $request)
     {
+
         $token = $request->input("form_token");
         $name = $request->input("name");
         $lastname = $request->input("lastname");

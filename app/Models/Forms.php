@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use App\Models\roleModel;
 
 class Forms extends Model
 {
@@ -36,4 +37,5 @@ class Forms extends Model
     protected $casts = [
         'form_ro_id' => 'json'
     ];
+
 }
