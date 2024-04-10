@@ -52,6 +52,8 @@ class basicFormController extends Controller
         $lastname = $request->input("lastname");
         $phone = $request->input("phone");
         $email = $request->input("email");
+        $employee_or_not = $request->input("employee");
+        $cooperative_or_not = $request->input("cooperative");
         $role_name = $request->input("role_name");
         $programlanguage = $request->input("programlanguage");
         $addinformation = $request->input("addinformation");
@@ -84,6 +86,11 @@ class basicFormController extends Controller
         $basicFormModel->bdu_lastname = $lastname;
         $basicFormModel->bdu_phone = $phone;
         $basicFormModel->bdu_email = $email;
+        if($cooperative_or_not == 1){
+            $basicFormModel->bdu_working = "สหกิจศึกษา";
+        }else{
+            $basicFormModel->bdu_working = "พนักงานทั่วไป";
+        }
         $basicFormModel->bdu_language_program = $programlanguage;
         $basicFormModel->bdu_additional_data = $addinformation;
         $basicFormModel->bdu_resume_name = $base64Image;
@@ -96,7 +103,7 @@ class basicFormController extends Controller
 
         $basicFormModel->save();
 
-        return redirect("/login");
+        return redirect("/tableData?form_token=$token");
     }
 
     public function edit(string $id)
