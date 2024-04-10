@@ -68,7 +68,7 @@ Route::get('/showQR', function () {
 
 // รอบสมัคร
 Route::resource('recruitmentRound', RecruitmentController::class);
-// รายชื่อผู้สมัคร
+// รายชื่อผู้สมัคร 
 Route::resource('tableData', tableDataController::class);
 // ฟอร์มเบื้องต้น
 Route::get('/formprimary/{id}', [formPrimaryController::class, 'show'])->name('form.primary');
@@ -82,7 +82,13 @@ Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])
 
 // Route::get('download-pdf/{id}', [formPrimaryController::class, 'downloadPDF'])->name('downloadPDF');
 
-Route::get('/', [RecruitmentController::class, 'index'])->name('home');
+Route::get('/resume/{id}', [formPrimaryController::class, 'showResume'])->name('resume.show');
+
+
+ 
+
+
+// Route::get('/', [RecruitmentController::class, 'index'])->name('home');
 
 Route::get('/sendmail', [MailController::class,'index']);
 Route::get('/sendotp', [MailController::class,'index']);
