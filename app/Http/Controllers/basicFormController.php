@@ -18,17 +18,21 @@ class basicFormController extends Controller
     {
         // Find the form by form_token
         $forms = Forms::where('form_token', $token)->first(); // Use first() to execute the query and get a single resultp
-        // Check if the form was found
-        $roles = $forms->form_ro_id;
         if ($forms === null) {
             // If the form doesn't exist, redirect back to the forms page
             return view("error");
         }
+        // Check if the form was found
+        $roles = $forms->form_ro_id;
         foreach ($roles as $role) {
             if($role == $id) {
                 return view("form", compact("forms"));
             }
         }
+        if ($id == "all") {
+            return view("form", compact("forms"));
+        }
+
         return view("error");
     }
 
