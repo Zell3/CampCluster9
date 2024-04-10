@@ -41,7 +41,9 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
-Route::resource("/form",basicFormController::class);
+// Route with different route parameters
+Route::get("/form/{token}/{id}", [basicFormController::class, 'show']);
+
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
