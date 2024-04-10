@@ -13,8 +13,9 @@
     <h2>ฟอร์มเพิ่มเติม</h2>
 
     <div class="flexbox">
-            <form action="{{ url('form2') }}" method="POST" enctype="multipart/form-data">
+            <form action="/form2/" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method("PUT")
                 <div class = "container-item-left" style="width: 35%;">
                     <div>
                         <label for="birthday">วัน เดือน ปีเกิด</label><br>

@@ -45,6 +45,8 @@ Route::get('/otp',function(){
 Route::get("/form/{token}/{id}", [basicFormController::class, 'show']);
 Route::post("/form", [basicFormController::class, 'store']);
 
+Route::put("/form2", [basicFormController::class, 'update']);
+
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
 });
