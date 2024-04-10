@@ -1,26 +1,30 @@
-<!DOCTYPE html>
+@extends('dashboard')
+@section('title',"TableData")
+@section('content')
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Table</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-8QPo7Xwf7V8xYgHrFBsUFdTrtS7jxPUOqewHbmaXQ7IyCtZLMRhcDnmBXzIWKYFI" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+    {{-- <title>Table</title> --}}
+{{--
 </head>
-<body>
+<body> --}}
     {{-- header --}}
-    <header class="p-3 mb-3 border-bottom">
+    {{-- <header class="p-3 mb-3 border-bottom">
         <div class="container"></div>
-    </header>
+    </header> --}}
 
     {{-- sidebar for test --}}
-    <div class="sidebar">test</div>
+    {{-- <div class="sidebar">test</div> --}}
 
     <div class="tools-flex-box">
         {{-- email button --}}
@@ -141,7 +145,7 @@
     {{-- table --}}
     <div class="table-responsive">
         <table class="table table-striped table-sm">
-            <thead>
+            <thead >
                 <tr>
                     <th>พิน</th>
                     <th>เลือก</th>
@@ -258,6 +262,7 @@
             filterPopup.style.display = 'none';
         }
     </script>
-</body>
+{{-- </body>
 
-</html>
+</html> --}}
+@endsection
