@@ -7,13 +7,15 @@ body{
 
 .flexbox{
     display: flex;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    justify-content: flex-end;
 }
 
 .item{
     display: block;
     box-sizing: border-box;
     width: 50%;
+    align-items: center;
 }
 
 .content{
@@ -26,8 +28,8 @@ body{
 label{
     font-size: 16px;
     margin-right: 20px;
-    
-    
+
+
 }
 
 .ti,.lo{
@@ -55,7 +57,7 @@ label{
     justify-content: center;
     width: 150px;
     font-size: 15px;
-    
+
 }
 
 .date_e{
@@ -71,7 +73,7 @@ label{
     width: 100%;
     max-width: 500px;
     font-size: 15px;
-    
+
 }
 
 img{

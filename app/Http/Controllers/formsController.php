@@ -16,7 +16,7 @@ class formsController extends Controller
     public function index()
     {
         // You can pass any necessary data to the form view here
-        return view('createform');
+        return view('makeRound');
     }
 
     // Store a newly created resource in storage
@@ -52,8 +52,9 @@ class formsController extends Controller
         $validatedFormsData['form_is_employee'] = $isEmployee ? 1 : 0;
         $validatedFormsData['form_is_cooperative'] = $isCooperative ? 1 : 0;
 
-        // Store the roles as a JSON array in database
-        $roles = $request->input('roles', []);
+        // Store the roles as a JSON array
+        // $roles = $request->input('roles', []);
+        $roles = array_map('intval', $request->input('roles', []));
         $validatedFormsData['form_ro_id'] = $roles;
 
         // Create a new form record
@@ -77,7 +78,6 @@ class formsController extends Controller
                     ->errorCorrection('H')
                     ->size(200)
                     ->generate($link, public_path('qrcodes/' . $filename));
-                $qrCodes[] = asset('qrcodes/' . $filename);
             }
         }
 
@@ -91,9 +91,8 @@ class formsController extends Controller
             ->errorCorrection('H')
             ->size(200)
             ->generate($link, public_path('qrcodes/' . $filename));
-        $qrCodes[] = asset('qrcodes/' . $filename);
 
-        return view('qrCode', compact('qrCodes'));
+        return view('makeRound', compact('forms'));
     }
 
      /**

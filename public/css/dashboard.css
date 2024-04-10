@@ -116,7 +116,7 @@ body {
     align-items: center;
     height: 100vh;
     margin-left: 280px;
-    overflow-y: scroll;
+    overflow: none;
 }
 
 a {
@@ -126,7 +126,6 @@ a {
 .container-make-round {
     width: 100%;
     height: 80vh;
-    margin-top: 55px;
 }
 
 
@@ -254,3 +253,8 @@ hr {
       width: 70%;
     }
   }
+
+.scrollcontentlock {
+    height: 100%;
+    overflow-y: scroll;
+}

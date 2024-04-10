@@ -29,13 +29,10 @@ use App\Http\Controllers\OTPController;
 |
 */
 
+//login
 Route::get('/', function () {
     return view('welcome');
 })->middleware("auth");
-
-Route::get('/editr',function(){
-    return view('edit_round');
-});
 Route::get("/",function(){
     return redirect("/login");
 });
@@ -44,60 +41,24 @@ Route::get('/otp',function(){
     return view('otp');
 });
 
+Route::resource("/form",basicFormController::class);
+Route::get('/showFormPrimary', function () {
+    return view('formPrimary');
+});
+Route::get('/showFormAddition', function () {
+    return view('showFormAddition');
+});;
 Route::get('/filter',function(){
     return view('filter');
 });
 
-Route::get('/form', function () {
-    return view('form');
-});
-
-Route::resource("/form",basicFormController::class);
-
-Route::get('/showFormPrimary', function () {
-    return view('formPrimary');
-});
-
-Route::get('/showFormAddition', function () {
-    return view('showFormAddition');
-});
-
-Route::get('/sidebar', function () {
-    return view('dashboard');
-});
-
-Route::get('/form2', function () {
-    return view('form2');
-});
-
 Route::resource("/form2",additionalFormController::class);
 
-Route::get('/edit', function () {
-    return view('edit');
-});
-
-Route::resource('/createform', formsController::class);
-
-// Route::post('/createform', [formsController::class, 'store']);
-Route::get('/send', function () {
-    return view('email');
-});
-
-Route::get('/sendmail', [MailController::class,'index']);
-Route::get('/sendotp', [MailController::class,'index']);
-
-
-Route::get("/login",[authController::class,"login_view"]) -> name("login");
-Route::post("/login-check",[authController::class,"login_auth"]);
-Route::get("/logout",[authController::class,"logout"]);
-
+// Make Forms
+Route::resource('/makeRound', formsController::class);
 // Edit Forms Routes
 Route::get('/editr/{id}', [formsController::class, 'edit'])->name('editr.edit');
 Route::put("/editr/{id}",[formsController::class, 'update'])->name('editr.update');
-
-Route::get('/round', function () {
-    return view('makeRound');
-});
 
 Route::get('/showQR', function () {
     return view('showQR');
@@ -121,12 +82,7 @@ Route::get('/show-additional-data/{id}', [formAdditionController::class,'show'])
 
 Route::get('/', [RecruitmentController::class, 'index'])->name('home');
 
-Route::get('/send', function () {
-    return view('email');
-});
-
 Route::get('/sendmail', [MailController::class,'index']);
-
 Route::get('/sendotp', [MailController::class,'index']);
 
 
@@ -157,6 +113,3 @@ Route::get('/send', function () {
     return view('email');
 });
 
-Route::get('/makeRound', function () {
-    return view('makeRound');
-});
