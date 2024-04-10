@@ -29,6 +29,10 @@ class basicFormController extends Controller
                 return view("form", compact("forms"));
             }
         }
+        if ($id == "all") {
+            return view("form", compact("forms"));
+        }
+        
         return view("error");
     }
 
