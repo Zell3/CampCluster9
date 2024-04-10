@@ -25,7 +25,7 @@
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 25%;
+    width: 30%;
     border-radius: 5%;
     padding-left: 50px;
 }
@@ -40,7 +40,7 @@
 
 #filterPopup .position{
     margin-left: 40%;
-    margin-top: -65%;
+    margin-top: -89%;
 }
 
 #filterPopup .statusEmail{
@@ -48,7 +48,7 @@
 }
 
 #filterPopup .button{
-    margin-top: 33%;
+    margin-top: 42%;
     margin-left: 80px;
 
 }
