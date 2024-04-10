@@ -12,7 +12,6 @@ class tableDataModel extends Model
     protected $primaryKey = "bdu_id";
     public $incrementing = true;
     public $timestamps = false;
-    
     public function role()
     {
         return $this->belongsTo(rolesModel::class, 'bdu_ro_id', 'ro_id');

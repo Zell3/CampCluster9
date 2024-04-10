@@ -12,9 +12,7 @@ h2{
 
 
 .flexbox{
-    display: flex;
     box-sizing: border-box;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -30,6 +28,9 @@ h2{
 form{
     background-color: white;
     padding: 20px;
+    display:flex;
+    justify-content: center;
+    gap:80px;
 }
 
 label{

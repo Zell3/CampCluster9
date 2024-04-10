@@ -4,7 +4,21 @@ FROM httpd:2.4.52-alpine
 # Copy Apache virtual host configuration
 COPY server_conf/apache.conf /usr/local/apache2/conf/httpd.conf
 
-# RUN echo "ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://php:9000/var/www/html/$1" >> /usr/local/apache2/conf/httpd.conf
+# Add a new user and group
+RUN addgroup -g 1000 mygroup && \
+    adduser -D -u 1000 -G mygroup myuser
+
+# Set permissions for Apache configuration file
+RUN chown myuser:mygroup /usr/local/apache2/conf/httpd.conf && \
+    chmod 644 /usr/local/apache2/conf/httpd.conf
+
+# Set permissions for any other files/directories if needed
+# Example:
+# RUN chown -R myuser:mygroup /path/to/your/files
 
 # Expose port 80
 EXPOSE 80
+
+# Start Apache
+CMD ["httpd-foreground"]
+
