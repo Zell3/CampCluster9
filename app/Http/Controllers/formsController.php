@@ -28,7 +28,6 @@ class formsController extends Controller
             'form_title' => 'required',
             'form_location' => 'required',
             'form_comment' => 'nullable',
-            'form_type' => 'required',
             'form_created_at' => 'required|date',
             'form_expired_at' => 'required|date|after_or_equal:form_created_at',
         ]);
@@ -54,7 +53,7 @@ class formsController extends Controller
 
         // Store the roles as a JSON array
         // $roles = $request->input('roles', []);
-        $roles = array_map('intval', $request->input('roles', []));
+        $roles = $request->input('roles', []);
         $validatedFormsData['form_ro_id'] = $roles;
 
         // Create a new form record
@@ -92,7 +91,8 @@ class formsController extends Controller
             ->size(200)
             ->generate($link, public_path('qrcodes/' . $filename));
 
-        return view('makeRound', compact('forms'));
+        // return redirect('/makeRound');
+        return view("makeRound", compact("forms"));
     }
 
      /**
@@ -100,8 +100,17 @@ class formsController extends Controller
      */
     public function show(String $id)
     {
-        $forms = Forms::findOrFail($id);
-        return view('editRound', compact('forms'));
+        // Find the form by form_token
+        $forms = Forms::where('form_token', $id)->first(); // Use first() to execute the query and get a single result
+
+        // Check if the form was found
+        if ($forms === null) {
+            // If the form doesn't exist, redirect back to the forms page
+            return redirect('/forms');
+        } else {
+            // If the form exists, return the edit view with the form data
+            return view("makeRound", compact("forms"));
+        }
     }
 
     // Show the form for editing the specified resource
