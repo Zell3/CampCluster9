@@ -285,7 +285,6 @@
                     });
                     return;
                 }
-
                 rows.forEach(function(row) {
                     var nameColumn = row.getElementsByTagName('td')[3];
 
