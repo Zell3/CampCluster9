@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\OTPController;
+use App\Http\Controllers\basicFormController;
 
 
 /*
@@ -46,6 +47,8 @@ Route::get('/filter',function(){
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::resource("/form",basicFormController::class);
 
 Route::get('/showFormPrimary', function () {
     return view('formPrimary');
@@ -147,6 +150,8 @@ Route::get('/enter-otp', function () {
 
 Route::post('/verify-otp', [MailController::class, 'verifyOTP']);
 
+Route::post('/resend-otp', [MailController::class, 'resendOtp']);
+
 Route::get('/send', function () {
     return view('email');
 });
@@ -154,3 +159,4 @@ Route::get('/send', function () {
 Route::get('/makeRound', function () {
     return view('makeRound');
 });
+

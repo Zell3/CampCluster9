@@ -10,6 +10,15 @@ use App\Models\Email;
 
 class MailController extends Controller
 {
+
+    public function generateRandomNumber() {
+        $random_number = '';
+        for ($i = 0; $i < 6; $i++) {
+            $random_number .= rand(0, 9);
+        }
+        return $random_number;
+    }
+    
     
     public function sendOtp(Request $request)
     {
@@ -17,6 +26,19 @@ class MailController extends Controller
         Mail::to($request->email)->send($mailData);
 
         return view('enter_otp')->with('email', $request->email);
+    }
+
+    public function resendOtp(Request $request)
+    {
+      
+        $otp = $this->generateRandomNumber();
+
+      
+        $mailData = new TestMail($request->email, $otp);
+        Mail::to($request->email)->send($mailData);
+
+        
+        return view('enter_otp')->with('email', $request->email)->with('resend', true);
     }
 
     public function verifyOTP(Request $request)
@@ -40,3 +62,4 @@ class MailController extends Controller
         }
     }
 }
+
