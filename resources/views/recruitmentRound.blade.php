@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-12">
-                            <a href="/tableData?form_id=<?php echo $recruitment->form_id; ?>">
+                            <a href="/tableData?form_token=<?php echo $recruitment->form_token; ?>">
                                 <label>เรื่อง: <?php echo $recruitment->form_title; ?></label>
                             </a>
                         </div>
@@ -48,7 +48,7 @@
                 </div>
 
                 {{-- <div class="card">
-                        <a href="/tableData?form_id=<?php echo $recruitment->form_id; ?>">
+                        <a href="/tableData?form_id=<?php echo $recruitment->form_token; ?>">
                             <label>เรื่อง: <?php echo $recruitment->form_title; ?></label>
                         </a>
                         <br>
