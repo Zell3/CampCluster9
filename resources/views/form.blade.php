@@ -10,8 +10,7 @@
 </head>
 
 <body>
-    <form action="/form" method="POST" class="form" enctype="multipart/form-data">
-        @csrf
+    <form action="{{ url('form') }}" method="POST" class="form" enctype="multipart/form-data">
         <div class="container-form">
             <input type="hidden" id="form_token" name="form_token" value="{{ $forms->form_token }}">
         </div>
