@@ -9,11 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
-
     <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Table</title>
-
 </head>
 
 <!-- กำหนดลักษณะ สถานะ wait or done -->
@@ -115,7 +113,7 @@
                         <input type="checkbox" id="waiting" name="emailStatus" value="waiting">
                         <label for="waiting">รอตอบกลับ</label>
                         <br>
-                        <input type="checkbox" id="responded" name="emailStatus" value="responded">
+                        <input type="checkbox" id="responded"  name="emailStatus" value="responded">
                         <label for="responded">ตอบกลับแล้ว</label>
                     </div>
 
@@ -295,6 +293,5 @@
             });
         }
     </script>
-{{-- </body>
-
+</body>
 </html>
