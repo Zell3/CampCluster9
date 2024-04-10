@@ -9,7 +9,10 @@
 </head>
 <body>
     <form action="/form" method="POST" class="form" enctype="multipart/form-data">
-        @csrf
+        @csrf'
+        <div class="container-form">
+            <input type="hidden" id="form_token" name="form_token" value="{{ $forms->form_token }}"
+        </div>
         <div class="container-form">
             <label for="inputName" class="header">ชื่อ</label>
             <br>

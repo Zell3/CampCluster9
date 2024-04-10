@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-8QPo7Xwf7V8xYgHrFBsUFdTrtS7jxPUOqewHbmaXQ7IyCtZLMRhcDnmBXzIWKYFI" crossorigin="anonymous">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
-    {{-- <title>Table</title> --}}
-{{--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Table</title>
+
 </head>
 
 <!-- กำหนดลักษณะ สถานะ wait or done -->
@@ -46,11 +44,8 @@
         <div class="item">
             <div class="btn-email">
 
-                <a href="#"><button class="btn-email-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-envelope"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                <a href="#"><button class="btn-email-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
                         </svg></button></a>
             </div>
         </div>
@@ -58,11 +53,9 @@
         {{-- search bar --}}
         <div class="item">
             <div class="searchBar">
-                <input type="text" placeholder="Search" class="inputSearch">
-                <button class=" btn-search-bg"><svg class="iconColor xmlns=" http://www.w3.org/2000/svg" width="16"
-                        height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                <input type="text" id="searchInput" placeholder="Search" class="inputSearch" style="margin-right: 10px;">
+                <button onclick="search()" class="btn-search-bg"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg></button>
             </div>
         </div>
@@ -72,11 +65,8 @@
             {{-- filter button --}}
             {{-- set path to filter page here --}}
             <div>
-                <a href="#"><button class="btn-filter-bg" id = "filterBtn"><svg class="iconColor"
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-filter" viewBox="0 0 16 16">
-                            <path
-                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                <a href="#"><button class="btn-filter-bg" id="filterBtn"><svg class="iconColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                         </svg>
                     </button>
                 </a>
@@ -144,7 +134,6 @@
                         <input type="checkbox" id="internship" name="position" value="Programmer">
                         <label for="internship">Programmer</label>
                     </div>
-
                     <br>
                     {{-- button go here --}}
                     <div class="button">
@@ -173,7 +162,7 @@
                     <th>สถานะอีเมล</th>
                 </tr>
             </thead>
-            <tbody class = "show-data">
+            <tbody class="show-data">
                 <?php foreach ($applicants as $index => $applicant) : ?>
                     <tr class="searchable">
                         <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle" viewBox="0 0 16 16">
@@ -260,7 +249,7 @@
                 const matchesType = type.length === 0 || type.includes(applicantType);
                 const matchesStatus = statuses.length === 0 || statuses.includes(applicantStatus.toLowerCase());
                 const matchesEmailStatus = emailStatuses.length === 0 || emailStatuses.includes(applicantStatus
-                .toLowerCase());
+                    .toLowerCase());
                 const matchesPosition = position.length === 0 || position.includes(applicantPosition);
 
                 // Show or hide the row based on the filter criteria
@@ -279,8 +268,33 @@
             // Close popup without applying filter
             filterPopup.style.display = 'none';
         }
+
+        function search() {
+            var input = document.getElementById("searchInput").value.trim().toUpperCase();
+            var rows = document.querySelectorAll('.searchable');
+
+            if (input === "") {
+                // แสดงทุกรายการเมื่อไม่มีข้อความในช่องค้นหา
+                rows.forEach(function(row) {
+                    row.style.display = '';
+                });
+                return;
+            }
+
+            rows.forEach(function(row) {
+                var nameColumn = row.getElementsByTagName('td')[3];
+
+                if (nameColumn) {
+                    var nameValue = nameColumn.textContent || nameColumn.innerText;
+                    if (nameValue.toUpperCase().indexOf(input) > -1) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        }
     </script>
 {{-- </body>
 
-</html> --}}
-@endsection
+</html>

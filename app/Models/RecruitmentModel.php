@@ -14,6 +14,6 @@ class RecruitmentModel extends Model
     public $timestamps = false;
     public function role()
     {
-        return $this->belongsTo(tableDataModel::class, 'form_id' ,'bdu_form_id');
+        return $this->belongsTo(tableDataModel::class, 'form_id' ,'bdu_form_token');
     }
 }

@@ -38,6 +38,7 @@ class basicFormController extends Controller
 
     public function store(Request $request)
     {
+        $token = $request->input("form_token");
         $name = $request->input("name");
         $lastname = $request->input("lastname");
         $phone = $request->input("phone");
@@ -48,7 +49,7 @@ class basicFormController extends Controller
 
         // Initialize $base64Image with a default or empty value
         $base64Image = '';
-
+      
         // Check if the image is uploaded and process it
         if ($request->hasFile('image')) {
             $image = $request->file('image')->getRealPath();
@@ -69,7 +70,7 @@ class basicFormController extends Controller
 
         // Set your model properties
         $basicFormModel->bdu_ro_id = $role_id;
-        $basicFormModel->bdu_form_id = 1;
+        $basicFormModel->bdu_form_token = $token;
         $basicFormModel->bdu_name = $name;
         $basicFormModel->bdu_lastname = $lastname;
         $basicFormModel->bdu_phone = $phone;
