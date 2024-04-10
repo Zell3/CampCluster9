@@ -10,6 +10,7 @@ use App\Models\Email;
 
 class MailController extends Controller
 {
+    
 
     public function generateRandomNumber() {
         $random_number = '';
