@@ -25,17 +25,17 @@ class basicFormSeeder extends Seeder
         // Generate sample data for your table
         $data = [
             [
-                'bdu_ro_id' => 1,
-                'bdu_form_id' => 1,
+                'bdu_ro_id' => 2,
+                'bdu_form_id' => 2,
                 'bdu_adu_id' => NULL,
                 'bdu_name' => "Pornchai",
                 'bdu_lastname' => "Lortae",
                 'bdu_phone' => "091-868-5148",
                 'bdu_email' => "Sudlor@gmail.com",
                 'bdu_language_program' => "Java, Lua",
-                'bdu_additional_data' => "ผมหล่อสุดใน SE",
+                'bdu_additional_data' => "I love you Na sudlor",
                 'bdu_resume_name' => NULL,
-                'bdu_working' => "University",
+                'bdu_working' => "สหกิจศึกษา",
                 'bdu_talent' => "Badminton",
                 'bdu_education' => "BUU",
                 'bdu_language' => "Chinese",
