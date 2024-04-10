@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/table.css') }}">
+
     <link rel="stylesheet" href="{{ asset('/css/filter.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
     <title>Table</title>
+
 </head>
-
 <body>
-
     {{-- header --}}
     <header class="p-3 mb-3 border-bottom">
         <div class="container"></div>
@@ -23,9 +21,8 @@
 
     {{-- sidebar for test --}}
     <div class="sidebar">test</div>
-    {{-- <form> --}}
-    <div class="tools-flex-box">
 
+    <div class="tools-flex-box">
         {{-- email button --}}
         <div class="item">
             <div class="btn-email">
@@ -39,8 +36,8 @@
             </div>
         </div>
 
+        {{-- search bar --}}
         <div class="item">
-            {{-- search  bar --}}
             <div class="searchBar">
                 <input type="text" placeholder="Search" class="inputSearch">
                 <button class=" btn-search-bg"><svg class="iconColor xmlns=" http://www.w3.org/2000/svg" width="16"
@@ -50,6 +47,8 @@
                     </svg></button>
             </div>
         </div>
+
+        {{-- filter button --}}
         <div class="item">
             {{-- filter button --}}
             {{-- set path to filter page here --}}
@@ -179,7 +178,6 @@
         </table>
     </div>
 
-    {{-- pop up --}}
     <script>
         const tableBody = document.querySelector('.show-data');
         const filterBtn = document.getElementById('filterBtn');
