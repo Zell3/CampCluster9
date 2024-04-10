@@ -7,7 +7,7 @@
     <div class="flexbox-make-round">
         <div class="item">
             <div class="content">
-                <form method="POST" action="{{ url('editr/{{ $forms->form_token }}') }}">
+                <form method="POST" action="{{ url('editr/' . $forms->form_token) }}">
                     @csrf
                     @method('PUT')
                     <div>
