@@ -59,8 +59,8 @@
                         <br>
                         <label>วันสิ้นสุด: <?php echo $recruitment->form_expired_at; ?></label>
                     </div> --}}
-
                 <?php endforeach; ?>
+                
             </div>
         </div>
     </div>
