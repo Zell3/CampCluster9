@@ -80,7 +80,7 @@
 }
 
 .flexbox-make-round .submit{
-    margin-left: 40%;
+    margin-left: 20%;
     max-width: 150px;
     width: 100px;
     height: 40px;
@@ -123,3 +123,22 @@
     background: transparent;
     border: transparent;
 }
+
+
+.cancel{
+    margin-left: 20%;
+    max-width: 150px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border: 0px solid beige;
+    color: #ffffff;
+    background-color:#C7333B;
+    border-radius: 10px;
+}
+
+.cancel:hover{
+    background-color:#e92f2fbe ;
+}
+
+
