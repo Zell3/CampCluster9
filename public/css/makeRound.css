@@ -6,6 +6,10 @@
 
 }
 
+.profile{
+    display:none;
+}
+
 .flexbox-make-round .item{
     display: block;
     box-sizing: border-box;
