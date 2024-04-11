@@ -86,7 +86,7 @@ body{
 }
 
 .tools-flex-box{
-    display: flex;
+    display: flex; 
     height: 30px;
     flex-direction: row;
     flex-wrap: wrap;

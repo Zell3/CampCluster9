@@ -17,6 +17,9 @@
 
     <!-- กำหนดลักษณะ สถานะ wait or done -->
     <style>
+        .header-container{
+            display:none !important;
+        }
         .wait-status,
         .done-status {
             background-color: white;
