@@ -10,6 +10,14 @@
     display:none;
 }
 
+.row{
+    display:block !important;
+}
+
+.cutcol-content{
+    margin-left:350px !important;
+}
+
 .flexbox-make-round .item{
     display: block;
     box-sizing: border-box;
