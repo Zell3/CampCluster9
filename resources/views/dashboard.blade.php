@@ -50,7 +50,7 @@
                             </div>
                             <br>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="{{ url('recruitmentRound') }}" aria-expanded="true">
+                                <a class="nav-link" href="{{ url('recruitmentRound') }}" aria-expanded="true">
                                     <div class="user-icon">
 
                                         <img src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png" alt="">
@@ -133,7 +133,7 @@
             }
         });
     </script>
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('.nav-link').click(function() {
                 $('.nav-link').removeClass('active');
@@ -141,7 +141,7 @@
             });
 
         });
-    </script>
+    </script> -->
     <script>
         // เมื่อหน้าโหลดเสร็จแล้ว
         document.addEventListener("DOMContentLoaded", function () {
