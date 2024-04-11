@@ -32,6 +32,7 @@
 
 #filterPopup .type{
     margin-top: 5%;
+    margin-bottom:30px;
 }
 
 #filterPopup .status{
@@ -40,7 +41,7 @@
 
 #filterPopup .position{
     margin-left: 40%;
-    margin-top: -89%;
+    margin-top: -40%;
 }
 
 #filterPopup .statusEmail{
@@ -48,7 +49,7 @@
 }
 
 #filterPopup .button{
-    margin-top: 42%;
+    margin-top:5%;
     margin-left: 80px;
 
 }

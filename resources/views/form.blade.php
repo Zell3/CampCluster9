@@ -18,7 +18,7 @@
         <div class="container-form">
             <label for="inputName" class="header">ชื่อ</label>
             <br>
-            <input type="text" name= "name" required placeholder="กรอกชื่อ" class="inputText">
+            <input type="text" name="name" required placeholder="กรอกชื่อ" class="inputText">
 
         </div>
 
@@ -41,13 +41,13 @@
             <label for="" class="header">ประเภทผู้สมัคร</label>
             <br>
             <select name="role_name" class="inputText">
-                <?php if($forms->form_is_employee == 1 && $forms->form_is_cooperative == 1){ ?>
-                    <option value="employee" name = "employee">พนักงานทั่วไป</option>
-                    <option value="cooperative" name = "cooperative">สหกิจศึกษา</option>
-                <?php }else if($forms->form_is_employee == 1){ ?>
-                    <option value="employee" name = "employee">พนักงานทั่วไป</option>
-                <?php }else {?>
-                    <option value="cooperative" name = "cooperative">สหกิจศึกษา</option>
+                <?php if ($forms->form_is_employee == 1 && $forms->form_is_cooperative == 1) { ?>
+                    <option value="employee" name="employee">พนักงานทั่วไป</option>
+                    <option value="cooperative" name="cooperative">สหกิจศึกษา</option>
+                <?php } else if ($forms->form_is_employee == 1) { ?>
+                    <option value="employee" name="employee">พนักงานทั่วไป</option>
+                <?php } else { ?>
+                    <option value="cooperative" name="cooperative">สหกิจศึกษา</option>
                 <?php } ?>
             </select>
         </div>
@@ -55,19 +55,19 @@
             <label for="inputWorking" class="header">ตำแหน่ง</label>
             <br>
             <select name="role_id" class="inputText">
-                <?php if($id == "1"){?>
-                    <option value="1" name = "role_id">System Analysis</option>
-                <?php }else if($id == "2"){ ?>
-                    <option value="2" name = "role_id">Tester</option>
-                <?php }else if($id == "3"){?>
-                    <option value="3" name = "role_id">Programmer</option>
-                <?php }else if($id == "4"){ ?>
-                    <option value="4" name = "role_id">Business Analyst</option>
-                <?php }else if($id == "all"){ ?>
-                    <option value="1" name = "role_id">System Analysis</option>
-                    <option value="2" name = "role_id">Tester</option>
-                    <option value="3" name = "role_id">Programmer</option>
-                    <option value="4" name = "role_id">Business Analyst</option>
+                <?php if ($id == "1") { ?>
+                    <option value="1" name="role_id">System Analysis</option>
+                <?php } else if ($id == "2") { ?>
+                    <option value="2" name="role_id">Tester</option>
+                <?php } else if ($id == "3") { ?>
+                    <option value="3" name="role_id">Programmer</option>
+                <?php } else if ($id == "4") { ?>
+                    <option value="4" name="role_id">Business Analyst</option>
+                <?php } else if ($id == "all") { ?>
+                    <?php $array = array("System Analysis", "Tester", "Programmer", "Business Analyst"); ?>
+                    <?php foreach ($forms->form_ro_id as $index => $role) { ?>
+                        <option value="<?php echo $array[$role - 1]; ?>" name="role_id"><?php echo $array[$role - 1]; ?></option>
+                    <?php } ?>
                 <?php } ?>
 
             </select>
@@ -75,8 +75,7 @@
         <div class="container-form">
             <label for="inputProgramLanguage" class="header">ภาษาโปรแกรมที่ถนัด</label>
             <br>
-            <input type="text" name="programlanguage" required placeholder="กรอกภาษาโปรแกรมที่ถนัด"
-                class="inputText">
+            <input type="text" name="programlanguage" required placeholder="กรอกภาษาโปรแกรมที่ถนัด" class="inputText">
         </div>
         <div class="container-form">
             <label for="inputaddInformation" class="header">ข้อมูลเพิ่มเติม</label>
@@ -106,8 +105,7 @@
         <div class="container-form">
             <label for="inputEducationBackground" class="header">ประวัติการศึกษา</label>
             <br>
-            <textarea name="educationbackground" required cols="30" rows="5" placeholder="กรอกประวัติการศึกษา"
-                class="inputTextArea"></textarea>
+            <textarea name="educationbackground" required cols="30" rows="5" placeholder="กรอกประวัติการศึกษา" class="inputTextArea"></textarea>
         </div>
         <div class="container-form">
             <label for="inputLanguage" class="header">ภาษาสื่อสารที่ถนัด</label>
@@ -117,10 +115,9 @@
         <div class="container-form">
             <label for="inputExpertSkills" class="header">ทักษะที่เชี่ยวชาญ</label>
             <br>
-            <textarea name="expertSkills" required cols="30" rows="5" placeholder="กรอกทักษะที่เชี่ยวชาญ"
-                class="inputTextArea"></textarea>
+            <textarea name="expertSkills" required cols="30" rows="5" placeholder="กรอกทักษะที่เชี่ยวชาญ" class="inputTextArea"></textarea>
         </div>
-        <button class= "btnSubmit" type= "submit">ส่ง</button>
+        <button class="btnSubmit" type="submit">ส่ง</button>
     </form>
 </body>
 

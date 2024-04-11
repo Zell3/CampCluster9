@@ -2,6 +2,14 @@
 @section('title', 'รอบสมัคร')
 @section('content')
 
+<style>
+    .cutcol-content{
+        margin:0;
+    }
+    .profile{
+        display:none;
+    }
+</style>
     <link rel="stylesheet" href="{{ asset('css/recruitment.css') }}">
     <div class="color-card-wrapper">
         <div class="flexbox-wrapper ">
