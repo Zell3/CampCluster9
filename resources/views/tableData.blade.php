@@ -203,21 +203,25 @@
             const closeBtn = document.getElementsByClassName('close')[0];
             const applyFilterBtn = document.getElementById('applyFilter');
             const cancelFilterBtn = document.getElementById('cancelFilter');
+            const tablerecruitlist = document.querySelector(".tablerecruitlist");
 
             // Open filter popup
             filterBtn.onclick = function() {
                 filterPopup.style.display = 'block';
+                tablerecruitlist.style.display = "none";
             }
 
             // Close filter popup
             closeBtn.onclick = function() {
                 filterPopup.style.display = 'none';
+                tablerecruitlist.style.display = "block";
             }
 
             // Close popup when clicked outside
             window.onclick = function(event) {
                 if (event.target == filterPopup) {
                     filterPopup.style.display = 'none';
+                    tablerecruitlist.style.display = "block";
                 }
             }
 
@@ -240,6 +244,7 @@
 
                 // Close the filter popup
                 document.getElementById('filterPopup').style.display = 'none';
+                tablerecruitlist.style.display = "block";
             });
 
             function filterTableRows(startDate, endDate, type, statuses, emailStatuses, position) {
