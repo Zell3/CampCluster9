@@ -40,7 +40,7 @@ body{
     left: 50px;
     top: 80px;
     right: 20px;
-    z-index: 1000;
+    z-index:999;
     margin-left: 17%;
 }
 
@@ -86,14 +86,14 @@ body{
 }
 
 .tools-flex-box{
-    display: flex;
+    display: flex; 
     height: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     margin-right: 9px;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .item{
